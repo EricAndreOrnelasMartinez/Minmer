@@ -12,3 +12,9 @@ connection.connect((err) =>{
     console.log('conectado!!')
 }
 )
+connection.query('SELECT * FROM Main', (err, rows) =>{
+    if(err) throw err
+    const user = rows[0]
+    console.log(rows[0].Nombre)
+})
+
