@@ -1,4 +1,4 @@
 <?php
-    $var = $_POST['userf'];
+    $var = $_POST['user'];
     echo "hola $var";
 ?>
