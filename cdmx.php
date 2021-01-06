@@ -9,7 +9,7 @@ $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_array($ans);
-echo $result;
+echo $result['Nombre'];
 echo $sql;
 echo "todo bien 3";
 ?>
