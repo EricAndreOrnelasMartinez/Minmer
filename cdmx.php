@@ -8,8 +8,9 @@ $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
+$result = mysqli_fetch_array($ans);
+echo $result['Contrasena'];
 echo $sql;
-echo $ans;
 echo "todo bien 3";
 ?>
 <!DOCTYPE html>
