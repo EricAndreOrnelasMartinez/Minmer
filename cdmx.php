@@ -12,6 +12,7 @@ if($ans){
 while($result = mysqli_fetch_array($ans)){
     $str = implode(',',$result);
     echo $str;
+    break;
 }
 }
 if(! $ans){
