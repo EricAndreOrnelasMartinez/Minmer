@@ -13,8 +13,9 @@ while($result = mysqli_fetch_array($ans)){
     $str = implode(',',$result);
     echo $str;
 }
-}else {
-    echo "usuario no existente";
+}
+if(! $ans){
+    echo "no existente";
 }
 echo "todo bien 3";
 ?>
