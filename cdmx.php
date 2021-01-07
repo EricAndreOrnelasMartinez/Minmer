@@ -8,15 +8,19 @@ $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
+$booleanR = false;
 if($ans){
 while($result = mysqli_fetch_array($ans)){
     $str = implode($result);
-    echo $str;
-    break;
+    if($pass === $str){
+        $booleanR = true;
+    }
 }
 }
-if(! $ans){
-    echo "no existente";
+if($booleanR){
+    echo "Usuario valido";
+}else{
+    echo "Usuario invalido";
 }
 echo "todo bien 3";
 ?>
