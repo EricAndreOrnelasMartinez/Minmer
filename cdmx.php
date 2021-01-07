@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 include('cndb.php');
-require_once("initsession.php");
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
