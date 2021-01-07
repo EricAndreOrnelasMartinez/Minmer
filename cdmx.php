@@ -8,12 +8,12 @@ $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
-
-if(validation($ans, $pass)){
-    echo "Usuario valido";
-}else{
-    echo "Usuario invalido";
-}
+echo implode(validation($ans, $pass));
+//if(validation($ans, $pass)){
+//    echo "Usuario valido";
+//}else{
+//    echo "Usuario invalido";
+//}
 echo "todo bien 3";
 ?>
 <!DOCTYPE html>
