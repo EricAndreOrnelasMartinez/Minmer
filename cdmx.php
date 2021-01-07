@@ -36,10 +36,11 @@ function validation($ans, $pass){
         $str = implode($result);
         if($pass === $str){
             $booleanR = true;
-            return true;
+            //return true;
         }else{
-            return false;
+            //return false;
         }
+        return true;
     }
 }
 
