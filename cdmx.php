@@ -12,7 +12,7 @@ if($ans2->num_rows > 0){
     $result = mysqli_fetch_assoc($ans);
     $str = implode($result);
     if($pass === $str){
-    echo "Usuario valido";
+
     }else{
         header("Location:login.html");
     }
@@ -28,7 +28,42 @@ if($ans2->num_rows > 0){
     <title>Document</title>
 </head>
 <body>
+    <ol>
+        <li><a href="cdmx.php">CDMX</a></li>
+        <li><a href="gdl.php">GDL</a></li>
+        <li><a href="mty.php">MTY</a></li>
+        <li><a href="cun.php">CUN</a></li>
+        <li><a href="sjd.php">SJD</a></li>
+        <li><a href="qro.php">QRO</a></li>
     
+    </ol>
+    <table>
+        <tr>
+            <td>Fecha de carga</td>
+            <td>Fecha de entrega</td>
+            <td>Operador</td>
+            <td>Placas</td>
+            <td>ID</td>
+            <td>SO</td>
+            <td>Factura</td>
+            <td>Cliente</td>
+            <td>PZS</td>
+            <td>Cajas</td>
+            <td>Subtotal</td>
+            <td>Horario</td>
+            <td>Dirección</td>
+            <td>Destino</td>
+            <td>Concepto</td>
+            <td>Capacidad</td>
+            <td>Observaciones</td>
+            <td>Custodia</td>
+        </tr>    
+    </table>
+
+    <form enctype="multipart/form-data" method="post">
+        Subir registro exel: <input type="file" name="myfile">
+        <input type="submit" value="Subir" onclick="setFileName(<?php $_FILES['myfile']['name'] ?>)">
+    </form>
 </body>
 </html>
 
