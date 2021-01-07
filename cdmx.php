@@ -39,6 +39,7 @@ if($ans2->num_rows > 0){
     </ol>
     <table>
         <tr>
+            <td>ID SQL</td>
             <td>Fecha de carga</td>
             <td>Fecha de entrega</td>
             <td>Operador</td>
@@ -56,6 +57,7 @@ if($ans2->num_rows > 0){
             <td>Concepto</td>
             <td>Capacidad</td>
             <td>Observaciones</td>
+            <td>OE</td>
             <td>Custodia</td>
         </tr>    
     </table>
@@ -66,4 +68,32 @@ if($ans2->num_rows > 0){
     </form>
 </body>
 </html>
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors','1');
 
+if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name']) && !empty($_FILES['myfile']['tmp_name'])){
+    if(!is_uploaded_file($_FILES['myfile']['tmp_name'])){
+        echo "Error: el fichero no fue procesado correctamente";
+    }
+
+    $source = $_FILES['myfile']['tmp_name'];
+    $destination = __DIR__.'/uploads/'.$_FILES['myfile']['name'];
+
+    if( is_file($destination)){
+        echo "Error: fichero existente";
+        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
+        exit;
+    }
+    if( ! @move_uploaded_file($source, $destination)){
+        echo "Error: el fichero no se pudo mover a la carpeta destino ".$destination;
+        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
+        exit;
+    }
+    echo "Se completo correctamente!! ||";
+    echo $_FILES['myfile']['name'];
+    include('readXLSX.php');
+    echo "working yet";
+    readAndC($_FILES['myfile']['name']);
+}
+?>
