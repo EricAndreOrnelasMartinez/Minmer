@@ -5,13 +5,19 @@ include('cndb.php');
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
-$ans = mysqli_query($con,$sql);
-$result = mysqli_fetch_assoc($ans);
-$str = implode($result);
-if($pass === $str){
+$sql2 = 'SELECT Nombre FROM Users WHERE Nombre="'.$userN.'";';
+$ans2 = mysqli_query($con, $sql2);
+if($ans2->num_rows > 0){
+    $ans = mysqli_query($con,$sql);
+    $result = mysqli_fetch_assoc($ans);
+    $str = implode($result);
+    if($pass === $str){
     echo "Usuario valido";
+    }else{
+        echo "Usuario Invalido";
+    }
 }else{
-    echo "Usuario Invalido";
+    header("Location:login.html");
 }
 ?>
 <!DOCTYPE html>
