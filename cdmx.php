@@ -8,15 +8,8 @@ $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
-$booleanR = false;
-while($result = mysqli_fetch_array($ans)){
-    $str = implode($result);
-    if($pass === $str){
-        $booleanR = true;
-    }
-}
 
-if($booleanR){
+if(validation()){
     echo "Usuario valido";
 }else{
     echo "Usuario invalido";
@@ -34,3 +27,20 @@ echo "todo bien 3";
     
 </body>
 </html>
+
+<?php 
+
+function validation(){
+    while($result = mysqli_fetch_array($ans)){
+        $str = implode($result);
+        if($pass === $str){
+            $booleanR = true;
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+
+?>
