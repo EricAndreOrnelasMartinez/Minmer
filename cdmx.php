@@ -8,12 +8,16 @@ $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $sql2 = 'SELECT Nombre FROM Users WHERE Nombre="'.$userN.'";';
 $ans2 = mysqli_query($con, $sql2);
+$_SESSION['usuario'];
 if($ans2->num_rows > 0){
     $ans = mysqli_query($con,$sql);
     $result = mysqli_fetch_assoc($ans);
     $str = implode($result);
     if($pass === $str){
-        require_once("initsession.php");
+        session_start();
+
+        $_SESSION['usuario'] = $userN;
+        echo "Sessión iniciada para el unuario".$_SESSION['usuario'];
     }else{
         //header("Location:login.html");
     }
