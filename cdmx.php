@@ -86,9 +86,6 @@ if($ans2->num_rows > 0){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
-        
-        
-        
         </tr> 
         <?php }?>
     </table>
