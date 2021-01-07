@@ -32,15 +32,14 @@ echo "todo bien 3";
 <?php 
 
 function validation($ans, $pass){
+    $retunV = false;
     while($result = mysqli_fetch_array($ans)){
         $str = implode($result);
         if($pass === $str){
-            $booleanR = true;
+            $retunV = true;
             //return true;
-        }else{
-            //return false;
         }
-        return true;
+        return $retunV;
     }
 }
 
