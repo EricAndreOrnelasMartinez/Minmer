@@ -2,7 +2,7 @@
 
     session_start();
 
-    $usuaroS = $_SESSION['var'];
+    $usuaroS = $_SESSION['dev'];
 
     $status = false;
 
