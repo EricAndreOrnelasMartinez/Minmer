@@ -31,11 +31,9 @@ echo $returnedV;
 
 function validation($ans, $pass){
     $retunV = false;
-    while($result = mysqli_fetch_array($ans)){
-        $str = implode($result);
-        echo $str;
-        break;
-    }
+    $result = mysqli_fetch_array($ans);
+    $str = implode($result['Contrasena']);
+    echo $str;
     return true;
 }
 
