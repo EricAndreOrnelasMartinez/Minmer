@@ -9,7 +9,7 @@ $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
 
-if(validation()){
+if(validation($ans)){
     echo "Usuario valido";
 }else{
     echo "Usuario invalido";
@@ -30,7 +30,7 @@ echo "todo bien 3";
 
 <?php 
 
-function validation(){
+function validation($ans){
     while($result = mysqli_fetch_array($ans)){
         $str = implode($result);
         if($pass === $str){
