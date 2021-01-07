@@ -14,10 +14,10 @@ if($ans2->num_rows > 0){
     if($pass === $str){
 
     }else{
-        header("Location:login.html");
+        //header("Location:login.html");
     }
 }else{
-    header("Location:login.html");
+    //header("Location:login.html");
 }
 ?>
 <!DOCTYPE html>
