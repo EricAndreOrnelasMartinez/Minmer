@@ -11,4 +11,3 @@
         echo "sessión empezada";
     }
 
-?>
