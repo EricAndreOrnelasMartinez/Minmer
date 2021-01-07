@@ -33,12 +33,10 @@ function validation($ans, $pass){
     $retunV = false;
     while($result = mysqli_fetch_array($ans)){
         $str = implode($result);
-        if($pass === $str){
-            $retunV = true;
-            //return true;
-        }
-        return true;
+        echo $str;
+        break;
     }
+    return true;
 }
 
 
