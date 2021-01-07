@@ -14,7 +14,7 @@ if($ans2->num_rows > 0){
     if($pass === $str){
     echo "Usuario valido";
     }else{
-        echo "Usuario Invalido";
+        header("Location:login.html");
     }
 }else{
     header("Location:login.html");
