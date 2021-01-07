@@ -8,6 +8,7 @@
 
     if(isset($usuaroS)){
         $status = true;
+        echo "sessión empezada";
     }
 
 ?>
