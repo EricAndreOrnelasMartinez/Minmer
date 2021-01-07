@@ -4,7 +4,7 @@ ini_set('display_errors','1');
 require 'Classes/PHPExcel/IOFactory.php';
 function readAndCDMX($fileU){
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-$fileName = "/var/www/html/Form/uploads/".$fileU;
+$fileName = "/var/www/html/Minmer/uploads/".$fileU;
 $obReader = PHPExcel_IOFactory::load($fileName); 
 $obReader->setActiveSheetIndex(0);
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
