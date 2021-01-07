@@ -31,7 +31,7 @@ echo $returnedV;
 
 function validation($ans, $pass){
     $retunV = false;
-    $result = fetch_assoc($ans);
+    $result = mysqli_fetch_assoc($ans);
     $str = implode($result);
     echo $str;
     return true;
