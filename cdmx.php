@@ -37,7 +37,7 @@ if($ans2->num_rows > 0){
         <li><a href="qro.php">QRO</a></li>
     
     </ol>
-    <table>
+    <table border="1">
         <tr>
             <td>ID SQL</td>
             <td>Fecha de carga</td>
