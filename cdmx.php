@@ -6,14 +6,13 @@ $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $ans = mysqli_query($con,$sql);
-$returnedV = validation($ans, $pass);
-echo "valor: ";
-echo $returnedV;
-//if(validation($ans, $pass)){
-//    echo "Usuario valido";
-//}else{
-//    echo "Usuario invalido";
-//}
+$result = mysqli_fetch_assoc($ans);
+$str = implode($result);
+if($pass === $str){
+    echo "Usuario valido";
+}else{
+    echo "Usuario Invalido";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,15 +26,3 @@ echo $returnedV;
 </body>
 </html>
 
-<?php 
-
-function validation($ans, $pass){
-    $retunV = false;
-    $result = mysqli_fetch_assoc($ans);
-    $str = implode($result);
-    echo $str;
-    return true;
-}
-
-
-?>
