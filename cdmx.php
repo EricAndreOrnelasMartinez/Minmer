@@ -16,10 +16,10 @@ if($ans2->num_rows > 0){
 
         $_SESSION['usuario'] = $userN;
     }else{
-        header("Location:login.html");
+        //header("Location:login.html");
     }
 }else{
-        header("Location:login.html");
+        //header("Location:login.html");
 }
 ?>
 <!DOCTYPE html>
