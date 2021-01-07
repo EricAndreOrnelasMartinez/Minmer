@@ -10,8 +10,10 @@ $obReader->setActiveSheetIndex(0);
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
 for($i = 2; $i <= $nRows; $i++){
     echo "bien 4";
-    $FechaC = date($obReader->getActiveSheet()->getCell('A'.$i)->getCalculatedValue());
-    $FechaE = date($obReader->getActiveSheet()->getCell('B'.$i)->getCalculatedValue());
+    $FechaC = $obReader->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
+    echo $FechaC;
+    $FechaE = $obReader->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
+    echo $FechaE;
     $Operador = $obReader->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
     $Placas = $obReader->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
     $ID = $obReader->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
@@ -32,7 +34,7 @@ for($i = 2; $i <= $nRows; $i++){
     $sql = "INSERT INTO CDMX(FechaC,FechaE,Operador,Placas,ID,SO,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC','$FechaE','$Operador','$Placas','$ID','$SO','$Factura','$Cliente','$PZS','$Cajas','$Subtotal','$Horario','$Direccion','$Destino','$Concepto','$Capacidad','$Observaciones','$OE','$Custodia');";
     $rmysql = mysqli_query($con, $sql);
     if($rmysql){
-        echo "capturado!!";
+       // echo "capturado!!";
     }else{
         echo "algo falló";
     }
