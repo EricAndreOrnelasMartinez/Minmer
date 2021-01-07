@@ -10,8 +10,8 @@ $obReader->setActiveSheetIndex(0);
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
 for($i = 2; $i <= $nRows; $i++){
     echo "bien 4";
-    $FechaC = date($format,$obReader->getActiveSheet()->getCell('A'.$i)->getValue());
-    $FechaE = date($formate, $obReader->getActiveSheet()->getCell('B'.$i)->getValue());
+    $FechaC = date('m/d/Y',$obReader->getActiveSheet()->getCell('A'.$i)->getValue());
+    $FechaE = date('m/d/Y', $obReader->getActiveSheet()->getCell('B'.$i)->getValue());
     $Operador = $obReader->getActiveSheet()->getCell('C'.$i)->getValue();
     $Placas = $obReader->getActiveSheet()->getCell('D'.$i)->getValue();
     $ID = $obReader->getActiveSheet()->getCell('E'.$i)->getValue();
