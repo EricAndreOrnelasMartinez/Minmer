@@ -7,6 +7,7 @@ $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 $fileName = "/var/www/html/Minmer/uploads/".$fileU;
 $obReader = PHPExcel_IOFactory::load($fileName); 
 $obReader->setActiveSheetIndex(0);
+$obReader->setReadDataOnly(TRUE);
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
 for($i = 2; $i <= $nRows; $i++){
     echo "bien 4";
