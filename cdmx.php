@@ -59,7 +59,38 @@ if($ans2->num_rows > 0){
             <td>Observaciones</td>
             <td>OE</td>
             <td>Custodia</td>
-        </tr>    
+        </tr>
+        <?php   
+        $petition = 'SELECT * FROM CDMX';
+        $ack = mysqli_query($con, $petition);
+        while($show = mysqli_fetch_array($ack)){
+        ?>
+        <tr>
+            <td><?php echo $show['ID_SQL'] ?></td>
+            <td><?php echo $show['FechaC'] ?></td>
+            <td><?php echo $show['FechaE'] ?></td>
+            <td><?php echo $show['Operador'] ?></td>
+            <td><?php echo $show['Placas'] ?></td>
+            <td><?php echo $show['ID'] ?></td>
+            <td><?php echo $show['SO'] ?></td>
+            <td><?php echo $show['Factura'] ?></td>
+            <td><?php echo $show['Cliente'] ?></td>
+            <td><?php echo $show['PZS'] ?></td>
+            <td><?php echo $show['Caja'] ?></td>
+            <td><?php echo $show['Subtotal'] ?></td>
+            <td><?php echo $show['Horario'] ?></td>
+            <td><?php echo $show['Direccion'] ?></td>
+            <td><?php echo $show['Destino'] ?></td>
+            <td><?php echo $show['Concepto'] ?></td>
+            <td><?php echo $show['Capacidad'] ?></td>
+            <td><?php echo $show['Observaciones'] ?></td>
+            <td><?php echo $show['OE'] ?></td>
+            <td><?php echo $show['Custodia'] ?></td>
+        
+        
+        
+        </tr> 
+        <?php }?>
     </table>
 
     <form enctype="multipart/form-data" method="post">
