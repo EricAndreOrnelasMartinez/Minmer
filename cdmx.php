@@ -37,7 +37,7 @@ function validation($ans, $pass){
             $retunV = true;
             //return true;
         }
-        return $retunV;
+        return false;
     }
 }
 
