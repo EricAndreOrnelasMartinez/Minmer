@@ -94,6 +94,6 @@ if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name'
     echo $_FILES['myfile']['name'];
     include('readXLSX.php');
     echo "working yet";
-    readAndC($_FILES['myfile']['name']);
+    readAndCDMX($_FILES['myfile']['name']);
 }
 ?>
