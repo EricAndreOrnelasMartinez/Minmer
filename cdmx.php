@@ -1,6 +1,7 @@
 <?php 
 include("setsession.php");
 
+$con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 if(!$booleanS){
     header("index.php");
 }
