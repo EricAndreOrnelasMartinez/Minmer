@@ -35,8 +35,6 @@ if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     }else{
         header("Location:index.php");
     }
-}else if(isset($_SESSION['usuario'])){
-    header("Location:cdmx.php");
 }else{
     header("Location:index.php");
 }
