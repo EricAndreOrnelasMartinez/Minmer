@@ -23,8 +23,7 @@ for($i = 2; $i <= $nRows; $i++){
     $PZS = $obReader->getActiveSheet()->getCell('I'.$i)->getCalculatedValue();
     $Cajas = intval($obReader->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
     $Subtotal = $obReader->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
-    $Horario = $obReader->getActiveSheet()->getCell('L'.$i)->getValue();
-    echo $Horario;
+    $Horario = intval($obReader->getActiveSheet()->getCell('L'.$i)->getValue());
     $Direccion = $obReader->getActiveSheet()->getCell('M'.$i)->getCalculatedValue();
     $Destino = $obReader->getActiveSheet()->getCell('N'.$i)->getCalculatedValue();
     $Concepto = $obReader->getActiveSheet()->getCell('O'.$i)->getCalculatedValue();
