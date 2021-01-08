@@ -7,21 +7,21 @@ $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
 $sql2 = 'SELECT Nombre FROM Users WHERE Nombre="'.$userN.'";';
 $ans2 = mysqli_query($con, $sql2);
-if($ans2->num_rows > 0){
-    $ans = mysqli_query($con,$sql);
-    $result = mysqli_fetch_assoc($ans);
-    $str = implode($result);
-    if($pass === $str){
-        session_start();
+$ans = mysqli_query($con,$sql);
+$result = mysqli_fetch_assoc($ans);
+$str = implode($result);
+if($pass === $str){
+    session_start();
 
-        $_SESSION['usuario'] = $userN;
-    }else{
-        //header("Location:login.html");
-    }
+    $_SESSION['usuario'] = $userN;
 }else{
-        //header("Location:login.html");
+    header("Location:index.html");
+    exit;
 }
-
+if(!isset($_SESSION)){
+    header("Location:index.html");
+    exit;
+}
 function hasA($string){
     $prove = false;//explode
     $arr = explode(" ",$string);
@@ -52,6 +52,10 @@ function hasA($string){
         <li><a href="qro.php">QRO</a></li>
     
     </ol>
+    <div>
+    <form action=""></form>
+    
+    </div>
     <table border="1">
         <tr>
             <td>ID SQL</td>
