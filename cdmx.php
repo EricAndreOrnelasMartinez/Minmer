@@ -23,10 +23,13 @@ if($ans2->num_rows > 0){
 }
 
 function hasA($string){
-    $prove = false;
-    list($indexO, $indexT, $indexTR, $indexF, $indexFI, $indexS, $indexSE, $indexE, $indexN, $indexTH) = str_split("",$string);
-    if($indexO === "a"||$indexT === "a" || $indexTR === "a" || $indexF === "a" || $indexFI === "a" || $indexS === "a" || $indexSE === "a" || $indexE === "a" || $indexN === "a" || $indexTH === "a"){
-        $prove = true;
+    $prove = false;//explode
+    $arr = explode("",$string);
+    foreach($arr as $indexL){
+        if($indexL === "a" || $indexL === "A"){
+            $prove = true;
+            break;
+        }
     }
     return $prove;
 }
