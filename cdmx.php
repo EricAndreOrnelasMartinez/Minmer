@@ -24,7 +24,7 @@ if($ans2->num_rows > 0){
 
 function hasA($string){
     $prove = false;//explode
-    $arr = explode("",$string);
+    $arr = explode(" ",$string);
     foreach($arr as $indexL){
         if($indexL === "a" || $indexL === "A"){
             $prove = true;
