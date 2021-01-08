@@ -11,15 +11,12 @@ $ans2 = mysqli_query($con, $sql2);
 $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
-if($pass === $str){
-    startST($userN);
-}else{
-    header("Location:index.html");
-    exit;
-}
 if(!isset($_SESSION['usuario'])){
-    header("Location:index.html");
-    exit;
+    if($pass === $str){
+        startST($userN);
+    }else{
+        header("Location:index.html");
+    }
 }
 function hasA($string){
     $prove = false;//explode
