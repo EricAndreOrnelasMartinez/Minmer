@@ -6,7 +6,7 @@ require "setsession.php";
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 echo "echo ";
 echo getSession();
-if(getSession()){
+if(!getSession()){
     header("index.php");
 }
 
