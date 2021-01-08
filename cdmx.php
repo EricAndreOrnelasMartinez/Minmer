@@ -94,7 +94,7 @@ function hasA($string){
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
             <td><?php if(!hasA($show['Horario'])){
-                echo $show['Horario'] * 24;
+                echo intval($show['Horario'] * 24);
             }else {
                 echo $show['Horario'];
             } ?></td>
