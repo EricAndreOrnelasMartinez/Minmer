@@ -1,7 +1,7 @@
 <?php 
 error_reporting(E_ALL);
 ini_set('display_errors','1');
-include("setsession.php");
+require "setsession.php";
 
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 echo "echo ";
