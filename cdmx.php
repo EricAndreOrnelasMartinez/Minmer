@@ -18,7 +18,7 @@ if($pass === $str){
     header("Location:index.html");
     exit;
 }
-if(!isset($_SESSION)){
+if(!isset($_SESSION['usuario'])){
     header("Location:index.html");
     exit;
 }
