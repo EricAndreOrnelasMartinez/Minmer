@@ -18,7 +18,7 @@ if(!isset($_SESSION['usuario'])){
         header("Location:index.html");
     }
 }else{
-    header("Location:index.html");
+    header("Location:cdmx.php");
 }
 function hasA($string){
     $prove = false;//explode
