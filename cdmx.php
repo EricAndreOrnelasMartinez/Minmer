@@ -123,7 +123,7 @@ ini_set('display_errors','1');
 $reUserN = $_SESSION['usuario'];
 if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name']) && !empty($_FILES['myfile']['tmp_name'])){
     session_start();
-
+    $_SESSION['usuario'] = $reUserN;
 
     if(!is_uploaded_file($_FILES['myfile']['tmp_name'])){
         echo "Error: el fichero no fue procesado correctamente";
