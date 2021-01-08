@@ -13,7 +13,7 @@ $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
 if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
-        startST();
+        startST($userN);
     }else{
         header("Location:index.html");
     }
