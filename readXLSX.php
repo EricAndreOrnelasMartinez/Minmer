@@ -18,7 +18,7 @@ for($i = 2; $i <= $nRows; $i++){
     $Factura = $obReader->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
     $Cliente = $obReader->getActiveSheet()->getCell('H'.$i)->getCalculatedValue();
     $PZS = $obReader->getActiveSheet()->getCell('I'.$i)->getCalculatedValue();
-    $Cajas = intval($obReader->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
+    $Cajas = round($obReader->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
     $Subtotal = $obReader->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
     $Horario = $obReader->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
     $Direccion = $obReader->getActiveSheet()->getCell('M'.$i)->getCalculatedValue();
