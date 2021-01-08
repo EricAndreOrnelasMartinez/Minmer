@@ -32,7 +32,7 @@ if(isset($_POST['username'])){
 if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
         startST($userN);
-      //  header("Location:cdmx.php");
+        header("Location:cdmx.php");
     }else{
         header("Location:index.php");
     }
