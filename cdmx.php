@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 include('cndb.php');
+include('setsession.php');
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
@@ -11,9 +12,7 @@ $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
 if($pass === $str){
-    session_start();
-
-    $_SESSION['usuario'] = $userN;
+    startST($userN);
 }else{
     header("Location:index.html");
     exit;
