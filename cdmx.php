@@ -5,10 +5,7 @@ require "setsession.php";
 
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 echo "echo ";
-echo getSession();
-if(!getSession()){
-    header("index.php");
-}
+echo getU();
 
 function hasA($string){
     $prove = false;//explode

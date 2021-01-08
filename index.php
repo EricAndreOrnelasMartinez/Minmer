@@ -31,7 +31,7 @@ $str = implode($result);
 if(isset($_POST['username'])){
 if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
-        startST($userN);
+        startST($userN,$pass);
         header("Location:cdmx.php");
     }else{
         header("Location:index.php");

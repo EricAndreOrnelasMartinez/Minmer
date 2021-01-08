@@ -1,24 +1,18 @@
 <?php 
 error_reporting(E_ALL);
 ini_set('display_errors','1');
-function startST($userN){
-
-    session_start();
-
-    $_SESSION['usuario'] = $userN;
-
-    if(isset($_SESSION['usuario'])){
-        echo "valido";
-    }else {
-        echo "invalido";
-    }
+$userN = 'd';
+$pass = 'd';
+function startST($user_N ,$pas_s){
+    $userN = $user_N;
+    $pass = $pas_s;
 }
-function getSession(){
-    $booleanS = false;
-    if(isset($_SESSION['usuario'])){
-        $booleanS = true;
-    }
-    return $booleanS;
+
+function getU(){
+    return $userN;
+}
+function getP(){
+    return $pass;
 }
 
 
