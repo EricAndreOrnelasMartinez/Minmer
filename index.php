@@ -19,7 +19,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-include('setsession.php');
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
