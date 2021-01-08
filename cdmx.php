@@ -11,7 +11,7 @@ $ans2 = mysqli_query($con, $sql2);
 $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
-if(!isset($_SESSION['usuario'])){
+if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
         startST($userN);
     }else{
