@@ -4,8 +4,13 @@ ini_set('display_errors','1');
 require "setsession.php";
 
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-echo "echo ";
-echo getU();
+session_start();
+
+if(isset($_SESSION['user'])){
+    echo "validoo";
+}else {
+    echo "forbiden";
+}
 
 function hasA($string){
     $prove = false;//explode

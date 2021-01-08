@@ -29,9 +29,10 @@ $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
 if(isset($_POST['username'])){
-if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
+if(!isset($_SESSION['user']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
-        startST($userN,$pass);
+        session_start();
+        $_SESSION['user'] = $userN;
         header("Location:cdmx.php");
     }else{
         header("Location:index.php");
