@@ -1,27 +1,10 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors','1');
-include('cndb.php');
-include('setsession.php');
-$userN = $_POST['username'];
-$pass = $_POST['pass'];
-$sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
-$sql2 = 'SELECT Nombre FROM Users WHERE Nombre="'.$userN.'";';
-$ans2 = mysqli_query($con, $sql2);
-$ans = mysqli_query($con,$sql);
-$result = mysqli_fetch_assoc($ans);
-$str = implode($result);
-if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
-    if($pass === $str){
-        startST($userN);
-    }else{
-        header("Location:index.html");
-    }
-}else if(isset($_SESSION['usuario'])){
-    header("Location:cdmx.php");
-}else{
-    header("Location:index.html");
+include("setsession.php");
+
+if(!$booleanS){
+    header("index.php");
 }
+
 function hasA($string){
     $prove = false;//explode
     $arr = explode(" ",$string);
