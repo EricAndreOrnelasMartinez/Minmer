@@ -80,7 +80,7 @@ if($ans2->num_rows > 0){
             <td><?php echo $show['PZS'] ?></td>
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
-            <td><?php echo $show['Horario'] * 24 ?></td>
+            <td><?php echo gettype($show['Horario']) ?></td>
             <td><?php echo $show['Direccion'] ?></td>
             <td><?php echo $show['Destino'] ?></td>
             <td><?php echo $show['Concepto'] ?></td>
