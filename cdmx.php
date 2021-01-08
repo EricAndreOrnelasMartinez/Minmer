@@ -18,7 +18,7 @@ if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
         header("Location:index.html");
     }
 }else{
-    header("Location:cdmx.php");
+    header("Location:index.html");
 }
 function hasA($string){
     $prove = false;//explode
