@@ -24,8 +24,8 @@ if($ans2->num_rows > 0){
 
 function hasA($string){
     $prove = false;
-    list($index1, $index2, $index3, $index4, $index5, $index6, $index7, $index8, $index9, $index10) = str_split("",$string);
-    if($index1 === "a"||$index2 === "a" || $index3 === "a" || $index4 === "a" || $index5 === "a" || $index6 === "a" || $index7 === "a" || $index8 === "a" || $index9 === "a" || $index10 === "a"){
+    list($indexO, $indexT, $indexTR, $indexF, $indexFI, $indexS, $indexSE, $indexE, $indexN, $indexTH) = str_split("",$string);
+    if($indexO === "a"||$indexT === "a" || $indexTR === "a" || $indexF === "a" || $indexFI === "a" || $indexS === "a" || $indexSE === "a" || $indexE === "a" || $indexN === "a" || $indexTH === "a"){
         $prove = true;
     }
     return $prove;
