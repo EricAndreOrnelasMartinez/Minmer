@@ -11,7 +11,7 @@ $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
 for($i = 2; $i <= $nRows; $i++){
     $FechaC = $obReader->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
     $FechaE = ($obReader->getActiveSheet()->getCell('B'.$i)->getCalculatedValue() * 24);
-    echo $FechaE;
+    //echo $FechaE;
     $Operador = $obReader->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
     $Placas = $obReader->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
     $ID = $obReader->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
