@@ -3,7 +3,7 @@ include("setsession.php");
 
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 echo $booleanS;
-if(!$booleanS){
+if($booleanS){
     header("index.php");
 }
 
