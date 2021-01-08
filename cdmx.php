@@ -17,6 +17,8 @@ if(!isset($_SESSION['usuario'])){
     }else{
         header("Location:index.html");
     }
+}else{
+    header("Location:index.html");
 }
 function hasA($string){
     $prove = false;//explode
