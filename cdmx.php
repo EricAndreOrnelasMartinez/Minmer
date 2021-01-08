@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 include('cndb.php');
-include('setsession.php');
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
 $sql = 'SELECT Contrasena FROM Users WHERE Nombre="'.$userN.'";';
@@ -11,9 +10,10 @@ $ans2 = mysqli_query($con, $sql2);
 $ans = mysqli_query($con,$sql);
 $result = mysqli_fetch_assoc($ans);
 $str = implode($result);
+include('setsession.php');
 if(!isset($_SESSION['usuario']) && !empty($userN) && !empty($pass) ){
     if($pass === $str){
-        startST($userN);
+        startST();
     }else{
         header("Location:index.html");
     }
@@ -115,7 +115,7 @@ function hasA($string){
 
     <form enctype="multipart/form-data" method="post">
         Subir registro exel: <input type="file" name="myfile">
-        <input type="submit" value="Subir" onclick="setFileName(<?php $_FILES['myfile']['name'] ?>)">
+        <input type="submit" value="Subir">
     </form>
 </body>
 </html>
