@@ -50,11 +50,12 @@ function hasA($string){
         <li><a href="cun.php">CUN</a></li>
         <li><a href="sjd.php">SJD</a></li>
         <li><a href="qro.php">QRO</a></li>
+        <li><a href="buscar.php">Buscar</a></li>
     
     </ol>
     <div>
-    <form action=""></form>
     
+
     </div>
     <table border="1">
         <tr>

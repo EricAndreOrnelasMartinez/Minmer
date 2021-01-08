@@ -1,6 +1,5 @@
 <?php 
-include("cdmx.php");
-function startST(){
+function startST($userN){
 
     session_start();
 
