@@ -35,27 +35,27 @@ function hasA($string){
     echo $tem_id;
     $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
-    $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=$tem_id";
+    $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFE = mysqli_query($con,$sqlFE);
-    $sqlOper = "SELECT Operador FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlOper = "SELECT Operador FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultOper = mysqli_query($con,$sqlOper);
-    $sqlPlac = "SELECT Placas FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlPlac = "SELECT Placas FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultPlac = mysqli_query($con,$sqlPlac);
-    $sqlID = "SELECT ID FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlID = "SELECT ID FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultID = mysqli_query($con,$sqlID);
-    $sqlOS = "SELECT OS FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlOS = "SELECT OS FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultOS = mysqli_query($con,$sqlOS);
-    $sqlFact = "SELECT Factura FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlFact = "SELECT Factura FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFact = mysqli_query($con,$sqlFact);
-    $sqlCli = "SELECT Cliente FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlCli = "SELECT Cliente FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultCli = mysqli_query($con,$sqlCli);
-    $sqlPZS = "SELECT PZS FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlPZS = "SELECT PZS FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultPZS = mysqli_query($con,$sqlPZS);
-    $sqlCaja = "SELECT Caja FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlCaja = "SELECT Caja FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultCaja = mysqli_query($con,$sqlCaja);
-    $sqlSub =  "SELECT Subtotal FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlSub =  "SELECT Subtotal FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultSub = mysqli_query($con,$sqlSub);
-    $sqlHor =  "SELECT Horario FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlHor =  "SELECT Horario FROM GDL WHERE ID_SQL=".$tem_id.";";
     $preResultHor =  mysqli_query($con,$sqlHor);
     $resultHor = "";
     if(!hasA($preResultHor)){
@@ -63,14 +63,40 @@ function hasA($string){
     }else {
         $resultHor = $preResultHor;
     }
-    $sqlDire = "SELECT Direccion FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlDire = "SELECT Direccion FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultDire = mysqli_query($con,$sqlDire);
-    $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL='$tem_id'";
-
+    $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultDest = mysqli_query($con,$sqlDest);
+    $sqlConce = "SELECT Concepto FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultConce = mysqli_query($con,$sqlConce);
+    $sqlCapa = "SELECT Capacidad FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultCapa = mysqli_query($con,$sqlCapa);
+    $sqlObser = "SELECT Observaciones FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultObser =  mysqli_query($con,$sqlObser);
+    $sqlOE = "SELECT OE FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultOE = mysqli_query($con,$sqlOE);
+    $sqlCust = "SELECT Custodia FROM GDL WHERE ID_SQL=".$tem_id.";";
+    $resultCust = mysqli_query($con,$sqlCust);
     ?>
-    Fecha de carga: <input type="text" name="newText" id="" value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>">
-    
-    
+    Fecha de carga: <input type="text" name="FechaC"  value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>">
+    Fecha de entrega: <input type="text" name="FechaE"  value="<?php echo implode(mysqli_fetch_assoc($resultFE)); ?>">
+    Operador: <input type="text" name="Operador" value="<?php echo implode(mysqli_fetch_assoc($resultOper)); ?>">
+    Placas: <input type="text" name="Placas"  value="<?php echo implode(mysqli_fetch_assoc($resultPlac)); ?>">
+    ID: <input type="text" name="ID" value="<?php echo implode(mysqli_fetch_assoc($resultID)); ?>">
+    SO: <input type="text" name="OS"  value="<?php echo implode(mysqli_fetch_assoc($resultOS)); ?>">
+    Factura: <input type="text" name="Factura"  value="<?php echo implode(mysqli_fetch_assoc($resultFact)); ?>">
+    Cliente: <input type="text" name="Cliente"  value="<?php echo implode(mysqli_fetch_assoc($resultCli)); ?>">
+    PZS: <input type="text" name="PZS"  value="<?php echo implode(mysqli_fetch_assoc($resultPZS)); ?>">
+    Cajas: <input type="text" name="Caja"  value="<?php echo implode(mysqli_fetch_assoc($resultCaja)); ?>">
+    Subtotal: <input type="text" name="Subtotal"  value="<?php echo implode(mysqli_fetch_assoc($resultSub)); ?>">
+    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysqli_fetch_assoc($resultHor)); ?>">
+    Direccion: <input type="text" name="Direccion"  value="<?php echo implode(mysqli_fetch_assoc($resultDire)); ?>">
+    Destino: <input type="text" name="Destino"  value="<?php echo implode(mysqli_fetch_assoc($resultDest)); ?>">
+    Concepto: <input type="text" name="Concepto"  value="<?php echo implode(mysqli_fetch_assoc($resultConce)); ?>">
+    Capacidad: <input type="text" name="Capacidad"  value="<?php echo implode(mysqli_fetch_assoc($resultCapa)); ?>">
+    Observaciones: <input type="text" name="Observaciones"  value="<?php echo implode(mysqli_fetch_assoc($resultObser)); ?>">
+    OE: <input type="text" name="OE"  value="<?php echo implode(mysqli_fetch_assoc($resultOE)); ?>">
+    Custodia: <input type="text" name="Custodia"  value="<?php echo implode(mysqli_fetch_assoc($resultCust)); ?>">
     </form>
 </body>
 </html>
