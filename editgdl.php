@@ -31,8 +31,7 @@ function hasA($string){
     <form action="gdl.php" method="post">
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-    $tem_id = $_GET['ids'];
-    settype($tem_id,"integer");
+    $tem_id = round($_GET['ids']);
     echo $tem_id;
     $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=$tem_id;";
     $resultFC = mysqli_query($con,$sqlFC);
