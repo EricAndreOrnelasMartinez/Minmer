@@ -58,10 +58,10 @@ function hasA($string){
     $sqlHor =  "SELECT Horario FROM GDL WHERE ID_SQL=".$tem_id.";";
     $preResultHor =  mysqli_query($con,$sqlHor);
     $resultHor = "";
-    if(!hasA($preResultHor)){
+    if(!hasA(implode($preResultHor))){
         $resultHor = round($preResultHor * 24).':00';
     }else {
-        $resultHor = $preResultHor;
+        $resultHor = implode($preResultHor);
     }
     $sqlDire = "SELECT Direccion FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultDire = mysqli_query($con,$sqlDire);
@@ -89,7 +89,7 @@ function hasA($string){
     PZS: <input type="text" name="PZS"  value="<?php echo implode(mysqli_fetch_assoc($resultPZS)); ?>"><br>
     Cajas: <input type="text" name="Caja"  value="<?php echo implode(mysqli_fetch_assoc($resultCaja)); ?>"><br>
     Subtotal: <input type="text" name="Subtotal"  value="<?php echo implode(mysqli_fetch_assoc($resultSub)); ?>"><br>
-    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysqli_fetch_assoc($resultHor)); ?>"><br>
+    Horario: <input type="text" name="Horario"  value="<?php echo $resultHor; ?>"><br>
     Direccion: <input type="text" name="Direccion"  value="<?php echo implode(mysqli_fetch_assoc($resultDire)); ?>"><br>
     Destino: <input type="text" name="Destino"  value="<?php echo implode(mysqli_fetch_assoc($resultDest)); ?>"><br>
     Concepto: <input type="text" name="Concepto"  value="<?php echo implode(mysqli_fetch_assoc($resultConce)); ?>"><br>
