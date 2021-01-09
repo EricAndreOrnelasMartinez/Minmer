@@ -33,7 +33,7 @@ function hasA($string){
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = round($_GET['ids']) + 1;
     echo $tem_id;
-    $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=$tem_id;";
+    $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
     $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=$tem_id";
     $resultFE = mysqli_query($con,$sqlFE);
@@ -68,7 +68,7 @@ function hasA($string){
     $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL='$tem_id'";
 
     ?>
-    Fecha de carga: <input type="text" name="newText" id="" value="<?php mysqli_fetch_assoc($resultFC); ?>">
+    Fecha de carga: <input type="text" name="newText" id="" value="<?php implode(mysqli_fetch_assoc($resultFC)); ?>">
     
     
     </form>
