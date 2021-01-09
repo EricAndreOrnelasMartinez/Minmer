@@ -67,7 +67,7 @@ function hasA($string){
     $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL='$tem_id'";
 
     ?>
-    Fecha de carga: <input type="text" name="newText" id="" value="<?php echo mysqli_query($con,"SELECT FechaC FROM GDL WHERE ID_SQL='$tem_id'") ?>">
+    Fecha de carga: <input type="text" name="newText" id="" value="<?php echo mysqli_query($con,$sqlFC) ?>">
     
     
     </form>
