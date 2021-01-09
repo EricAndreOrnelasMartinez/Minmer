@@ -68,7 +68,7 @@ function hasA($string){
     $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL='$tem_id'";
 
     ?>
-    Fecha de carga: <input type="text" name="newText" id="" value="<?php implode(mysqli_fetch_assoc($resultFC)); ?>">
+    Fecha de carga: <input type="text" name="newText" id="" value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>">
     
     
     </form>
