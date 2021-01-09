@@ -48,7 +48,7 @@ for($i = 2; $i <= $nRows; $i++){
 function readAndGDL($fileU){
     $con1 = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $fileName1 = __DIR__."/uploads/".$fileU;
-    $obReader1 = PHPExcel_IOFactory::load($fileName); 
+    $obReader1 = PHPExcel_IOFactory::load($fileName1); 
     $obReader1->setActiveSheetIndex(1);
     $nRows1 = $obReader1->setActiveSheetIndex(1)->getHighestRow();
     for($i = 2; $i <= $nRows1; $i++){
