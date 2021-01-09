@@ -53,15 +53,22 @@ function readAndGDL($fileU){
     $nRows1 = $obReader1->setActiveSheetIndex(1)->getHighestRow();
     for($i = 2; $i <= $nRows1; $i++){
         $FechaC1 = $obReader1->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
-        echo $FechaC1;
         $FechaE1 = $obReader1->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
+        echo $FechaC1.'    ';
         $Operador1 = $obReader1->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
+        echo $Operador1.'   ';
         $Placas1 = $obReader1->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
+        echo $Placas1.'   ';
         $ID1 = $obReader1->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
+        echo $ID1.'   ';
         $SO1 = $obReader1->getActiveSheet()->getCell('F'.$i)->getCalculatedValue();
+        echo $SO1-'   ';
         $Factura1 = $obReader1->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
+        echo $Factura1.'   ';
         $Cliente1 = $obReader1->getActiveSheet()->getCell('H'.$i)->getCalculatedValue();
+        echo $Cliente1-'   ';
         $PZS1 = $obReader1->getActiveSheet()->getCell('I'.$i)->getCalculatedValue();
+        echo $PZS1.'   ';
         $Cajas1 = round($obReader1->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
         $Subtotal1 = $obReader1->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
         $Horario1 = $obReader1->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
