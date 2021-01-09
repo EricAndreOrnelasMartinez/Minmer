@@ -32,9 +32,10 @@ function hasA($string){
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = $_GET['ids'];
-    $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL='$tem_id';";
+    echo $tem_id;
+    $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=$tem_id;";
     $resultFC = mysqli_query($con,$sqlFC);
-    $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL='$tem_id'";
+    $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=$tem_id";
     $resultFE = mysqli_query($con,$sqlFE);
     $sqlOper = "SELECT Operador FROM GDL WHERE ID_SQL='$tem_id'";
     $resultOper = mysqli_query($con,$sqlOper);
