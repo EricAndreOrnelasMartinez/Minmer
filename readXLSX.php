@@ -54,21 +54,13 @@ function readAndGDL($fileU){
     for($i = 2; $i <= $nRows1; $i++){
         $FechaC1 = $obReader1->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
         $FechaE1 = $obReader1->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
-        echo $FechaC1.'    ';
         $Operador1 = $obReader1->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
-        echo $Operador1.'   ';
         $Placas1 = $obReader1->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
-        echo $Placas1.'   ';
         $ID1 = $obReader1->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
-        echo $ID1.'   ';
         $SO1 = $obReader1->getActiveSheet()->getCell('F'.$i)->getCalculatedValue();
-        echo $SO1-'   ';
         $Factura1 = $obReader1->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
-        echo $Factura1.'   ';
         $Cliente1 = $obReader1->getActiveSheet()->getCell('H'.$i)->getCalculatedValue();
-        echo $Cliente1-'   ';
         $PZS1 = $obReader1->getActiveSheet()->getCell('I'.$i)->getCalculatedValue();
-        echo $PZS1.'   ';
         $Cajas1 = round($obReader1->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
         $Subtotal1 = $obReader1->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
         $Horario1 = $obReader1->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
@@ -79,7 +71,7 @@ function readAndGDL($fileU){
         $Observaciones1 = $obReader1->getActiveSheet()->getCell('Q'.$i)->getCalculatedValue();
         $OE1 = $obReader1->getActiveSheet()->getCell('R'.$i)->getCalculatedValue();
         $Custodia1 = $obReader1->getActiveSheet()->getCell('S'.$i)->getCalculatedValue();
-        $sql1 = "INSERT INTO GDL(FechaC,FechaE,Operador,Placas,ID,SO,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC1','$FechaE1','$Operador1','$Placas1','$ID1','$SO1','$Factura1','$Cliente1','$PZS1','$Cajas1','$Subtotal1','$Horario1','$Direccion1','$Destino1','$Concepto1','$Capacidad1','$Observaciones1','$OE1','$Custodia1');";
+        $sql1 = "INSERT INTO GDL(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC1','$FechaE1','$Operador1','$Placas1','$ID1','$SO1','$Factura1','$Cliente1','$PZS1','$Cajas1','$Subtotal1','$Horario1','$Direccion1','$Destino1','$Concepto1','$Capacidad1','$Observaciones1','$OE1','$Custodia1');";
         $rmysql1 = mysqli_query($con1, $sql1);
         if($rmysql1){
             echo "capturado!!";
