@@ -19,6 +19,10 @@ if(isset($_SESSION['user'])){
     <title>Document</title>
 </head>
 <body>
+    <form action="">
+    <input type="text" name="newText" id="" value="hola">
     
+    
+    </form>
 </body>
 </html>
