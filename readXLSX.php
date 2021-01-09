@@ -4,7 +4,7 @@ ini_set('display_errors','1');
 require 'Classes/PHPExcel/IOFactory.php';
 function readAndCDMX($fileU){
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-$fileName = "/var/www/html/Minmer/uploads/".$fileU;
+$fileName = __DIR__."/uploads/".$fileU;
 $obReader = PHPExcel_IOFactory::load($fileName); 
 $obReader->setActiveSheetIndex(0);
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
@@ -41,7 +41,7 @@ for($i = 2; $i <= $nRows; $i++){
 
 function readAndGDL($fileU){
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-    $fileName = "/var/www/html/Minmer/uploads/".$fileU;
+    $fileName = __DIR__."/uploads/".$fileU;
     $obReader = PHPExcel_IOFactory::load($fileName); 
     $obReader->setActiveSheetIndex(1);
     $nRows = $obReader->setActiveSheetIndex(1)->getHighestRow();
