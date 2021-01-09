@@ -35,7 +35,7 @@ for($i = 2; $i <= $nRows; $i++){
     }else{
         //echo "algo falló";
     }
-    readAndGDL($fileName);
+    readAndGDL($fileU);
 }
 }
 
