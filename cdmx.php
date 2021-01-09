@@ -100,7 +100,7 @@ function hasA($string){
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
         </tr> 
-        <?php }?>
+        <?php } $con->close()?>
     </table>
 
     <form enctype="multipart/form-data" method="post">

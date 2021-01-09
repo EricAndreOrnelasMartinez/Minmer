@@ -78,6 +78,7 @@ function readAndGDL($fileU){
         }else{
             echo "algo falló";
         }
+        $con->close();
     }
     }
 

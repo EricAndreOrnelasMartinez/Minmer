@@ -33,6 +33,7 @@ if(!isset($_SESSION['user']) && !empty($userN) && !empty($pass) ){
         session_start();
         $_SESSION['user'] = $userN;
         header("Location:cdmx.php");
+        $con->close();
     }else{
         header("Location:index.php");
     }
