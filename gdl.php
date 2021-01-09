@@ -103,39 +103,5 @@ function hasA($string){
         <?php }?>
     </table>
 
-    <form enctype="multipart/form-data" method="post">
-        Subir registro exel: <input type="file" name="myfile">
-        <input type="submit" value="Subir">
-    </form>
 </body>
 </html>
-<?php 
-error_reporting(E_ALL);
-ini_set('display_errors','1');
-if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name']) && !empty($_FILES['myfile']['tmp_name'])){
-    if(!is_uploaded_file($_FILES['myfile']['tmp_name'])){
-        echo "Error: el fichero no fue procesado correctamente";
-    }
-
-    $source = $_FILES['myfile']['tmp_name'];
-    $destination = __DIR__.'/uploads/'.$_FILES['myfile']['name'];
-
-    if( is_file($destination)){
-        echo "Error: fichero existente";
-        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
-        exit;
-    }
-    if( ! @move_uploaded_file($source, $destination)){
-        echo "Error: el fichero no se pudo mover a la carpeta destino ".$destination;
-        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
-        exit;
-    }
-   
-
-    echo "Se completo correctamente!! ||";
-    echo $_FILES['myfile']['name'];
-    include('readXLSX.php');
-    echo "working yet";
-    readAndGDL($_FILES['myfile']['name']);
-}
-?>

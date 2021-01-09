@@ -33,8 +33,9 @@ for($i = 2; $i <= $nRows; $i++){
     if($rmysql){
        // echo "capturado!!";
     }else{
-        echo "algo falló";
+        //echo "algo falló";
     }
+    readAndGDL($fileName);
 }
 }
 
@@ -67,9 +68,9 @@ function readAndGDL($fileU){
         $sql = "INSERT INTO GDL(FechaC,FechaE,Operador,Placas,ID,SO,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC','$FechaE','$Operador','$Placas','$ID','$SO','$Factura','$Cliente','$PZS','$Cajas','$Subtotal','$Horario','$Direccion','$Destino','$Concepto','$Capacidad','$Observaciones','$OE','$Custodia');";
         $rmysql = mysqli_query($con, $sql);
         if($rmysql){
-           // echo "capturado!!";
+            echo "capturado!!";
         }else{
-            //echo "algo falló";
+            echo "algo falló";
         }
     }
     }
