@@ -8,7 +8,7 @@ session_start();
 if(isset($_SESSION['user'])){
     echo "validoo";
 }else {
-    header("Location:index.html");
+    header("Location:index.php");
 }
 
 function hasA($string){
