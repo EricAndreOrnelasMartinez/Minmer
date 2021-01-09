@@ -95,7 +95,7 @@ function hasA($string){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
-            <td><form action="edit.php?ids=<?php echo $show['ID_SQL']?>"><input type="submit" value="Modificar"></form></td>
+            <td><a href="edit.php?ids='<?php echo $show['ID_SQL'] ?>'"><button type="button" class="btn btn-succes">Modificar</button></a></td>
         </tr>
         <?php }?>
     </table>
