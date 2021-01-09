@@ -49,10 +49,11 @@ function readAndGDL($fileU){
     $con1 = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $fileName1 = __DIR__."/uploads/".$fileU;
     $obReader1 = PHPExcel_IOFactory::load($fileName1); 
-    $obReader1->setActiveSheetIndex(20);
-    $nRows1 = $obReader1->setActiveSheetIndex(20)->getHighestRow();
+    $obReader1->setActiveSheetIndex(1);
+    $nRows1 = $obReader1->setActiveSheetIndex(1)->getHighestRow();
     for($i = 2; $i <= $nRows1; $i++){
         $FechaC1 = $obReader1->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
+        echo $FechaC1;
         $FechaE1 = $obReader1->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
         $Operador1 = $obReader1->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
         $Placas1 = $obReader1->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
