@@ -94,6 +94,9 @@ function hasA($string){
     Observaciones: <input type="text" name="Observaciones"  value="<?php echo implode(mysqli_fetch_assoc($resultObser)); ?>"><br>
     OE: <input type="text" name="OE"  value="<?php echo implode(mysqli_fetch_assoc($resultOE)); ?>"><br>
     Custodia: <input type="text" name="Custodia"  value="<?php echo implode(mysqli_fetch_assoc($resultCust)); ?>"><br>
+    <input type="hidden" name="ID_SQL" value="<?php echo $tem_id;  ?>">
+    <input type="submit" value="Guardar">
     </form>
+    <?php $con->close(); ?>
 </body>
 </html>
