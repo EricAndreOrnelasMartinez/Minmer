@@ -6,7 +6,7 @@ $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 session_start();
 
 if(isset($_SESSION['user'])){
-    echo "validoo";
+    //echo "validoo";
 }else {
     header("Location:index.php");
 }

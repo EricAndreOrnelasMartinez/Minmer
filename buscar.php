@@ -1,7 +1,12 @@
 <?php 
 
-include("setsession.php");
+session_start();
 
+if(isset($_SESSION['user'])){
+
+}else{
+    header("Location:index.php");
+}
 
 ?>
 <!DOCTYPE html>
