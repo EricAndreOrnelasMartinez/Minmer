@@ -33,7 +33,8 @@ function hasA($string){
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = round($_GET['ids']) + 1;
     echo $tem_id;
-    echo $_GET['hor'];
+    $tem_hor = $_GET['hor'];
+    echo $tem_hor;
     $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
     $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=".$tem_id.";";
@@ -56,7 +57,7 @@ function hasA($string){
     $resultCaja = mysqli_query($con,$sqlCaja);
     $sqlSub =  "SELECT Subtotal FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultSub = mysqli_query($con,$sqlSub);
-    $resultHor = $_GET['hor'];
+    $resultHor = $tem_hor;
     $sqlDire = "SELECT Direccion FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultDire = mysqli_query($con,$sqlDire);
     $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL=".$tem_id.";";
