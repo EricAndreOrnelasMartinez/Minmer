@@ -122,6 +122,7 @@ if(isset($_POST['FechaC'])){
     $Cajas1 = $_POST['Caja'];
     $Subtotal1 = $_POST['Subtotal'];
     $Horario1 = $_POST['Horario'];
+    $arr = "mal";
     if(!hasA($Horario1)){
         $arr = explode(":",$Horario1);
         $horarioT = $arr[0] / 24;
