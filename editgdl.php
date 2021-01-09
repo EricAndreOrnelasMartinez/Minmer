@@ -55,14 +55,7 @@ function hasA($string){
     $resultCaja = mysqli_query($con,$sqlCaja);
     $sqlSub =  "SELECT Subtotal FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultSub = mysqli_query($con,$sqlSub);
-    $sqlHor =  "SELECT Horario FROM GDL WHERE ID_SQL=".$tem_id.";";
-    $preResultHor =  mysqli_query($con,$sqlHor);
-    $resultHor = "";
-    if(!hasA(implode($preResultHor))){
-        $resultHor = round(implode($preResultHor) * 24).':00';
-    }else {
-        $resultHor = implode($preResultHor);
-    }
+    $resultHor = $_GET['hor'];
     $sqlDire = "SELECT Direccion FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultDire = mysqli_query($con,$sqlDire);
     $sqlDest =  "SELECT Destino FROM GDL WHERE ID_SQL=".$tem_id.";";

@@ -68,6 +68,7 @@ function hasA($string){
         <?php   
         $petition = 'SELECT * FROM GDL';
         $ack = mysqli_query($con, $petition);
+        $tempVar = "";
         while($show = mysqli_fetch_array($ack)){
         ?>
         <tr>
@@ -84,8 +85,10 @@ function hasA($string){
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
             <td><?php if(!hasA($show['Horario'])){
+                $tempVar = round($show['Horario'] * 24).':00';
                 echo round($show['Horario'] * 24).':00';
             }else {
+                $tempVar = $show['Horario'];
                 echo $show['Horario'];
             } ?></td>
             <td><?php echo $show['Direccion'] ?></td>
@@ -95,7 +98,7 @@ function hasA($string){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
-            <td><a href="editgdl.php?ids='<?php echo $show['ID_SQL'] ?>'"><button type="button" class="btn btn-succes">Modificar</button></a></td>
+            <td><a href="editgdl.php?ids='<?php echo $show['ID_SQL'] ?>'?hor='<?php echo $tempVar?>'"><button type="button" class="btn btn-succes">Modificar</button></a></td>
         </tr>
         <?php } $con->close()?>
     </table>
