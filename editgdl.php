@@ -33,6 +33,7 @@ function hasA($string){
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = round($_GET['ids']) + 1;
     echo $tem_id;
+    echo $_GET['hor'];
     $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
     $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=".$tem_id.";";
