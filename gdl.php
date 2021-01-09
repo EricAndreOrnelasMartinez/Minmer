@@ -81,7 +81,7 @@ function hasA($string){
             <td><?php echo $show['Operador'] ?></td>
             <td><?php echo $show['Placas'] ?></td>
             <td><?php echo $show['ID'] ?></td>
-            <td><?php echo $show['SO'] ?></td>
+            <td><?php echo $show['OS'] ?></td>
             <td><?php echo $show['Factura'] ?></td>
             <td><?php echo $show['Cliente'] ?></td>
             <td><?php echo $show['PZS'] ?></td>
