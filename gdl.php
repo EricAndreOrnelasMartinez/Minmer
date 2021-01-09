@@ -123,9 +123,10 @@ if(isset($_POST['FechaC'])){
     $Subtotal1 = $_POST['Subtotal'];
     $Horario1 = $_POST['Horario'];
     if(!hasA($Horario1)){
-        $horarioT = $Horario1 / 24;
+        $arr = explode(":",$Horario1);
+        $horarioT = $arr[0] / 24;
     }else {
-        $horarioT = $Horario1;
+        $horarioT = $arr[0];
     }
     $Direccion1 = $_POST['Direccion'];
     $Destino1 = $_POST['Destino'];
