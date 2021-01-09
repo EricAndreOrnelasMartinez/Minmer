@@ -124,7 +124,7 @@ if(isset($_POST['FechaC'])){
     $Direccion1 = $_POST['Direccion'];
     $Destino1 = $_POST['Destino'];
     $Concepto1 = $_POST['Concepto'];
-    $Capacidad1 = $_POST['Cacapasiad'];
+    $Capacidad1 = $_POST['Capasiad'];
     $Observaciones1 = $_POST['Observaciones'];
     $OE1 = $_POST['OE'];
     $Custodia1 = $_POST['Custodia'];
