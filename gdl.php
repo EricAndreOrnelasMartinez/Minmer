@@ -130,7 +130,8 @@ if(isset($_POST['FechaC'])){
     $Custodia1 = $_POST['Custodia'];
     $idsql = $_POST['ID_SQL'];
     $sqlUpdate = "UPDATE GDL SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',OS='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=".$idsql;
-    if($sqlUpdate){
+    $resulupdate = mysqli_query($con2,$sqlUpdate);
+    if($resulupdate){
         echo "Perfecto eres un crack";
     }else {
         echo "ota vez te equivocaste por pendejo";
