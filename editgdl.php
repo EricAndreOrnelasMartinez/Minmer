@@ -59,7 +59,7 @@ function hasA($string){
     $preResultHor =  mysqli_query($con,$sqlHor);
     $resultHor = "";
     if(!hasA(implode($preResultHor))){
-        $resultHor = round($preResultHor * 24).':00';
+        $resultHor = round(implode($preResultHor) * 24).':00';
     }else {
         $resultHor = implode($preResultHor);
     }
