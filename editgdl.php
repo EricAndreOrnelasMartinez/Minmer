@@ -78,25 +78,25 @@ function hasA($string){
     $sqlCust = "SELECT Custodia FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultCust = mysqli_query($con,$sqlCust);
     ?>
-    Fecha de carga: <input type="text" name="FechaC"  value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>">
-    Fecha de entrega: <input type="text" name="FechaE"  value="<?php echo implode(mysqli_fetch_assoc($resultFE)); ?>">
-    Operador: <input type="text" name="Operador" value="<?php echo implode(mysqli_fetch_assoc($resultOper)); ?>">
-    Placas: <input type="text" name="Placas"  value="<?php echo implode(mysqli_fetch_assoc($resultPlac)); ?>">
-    ID: <input type="text" name="ID" value="<?php echo implode(mysqli_fetch_assoc($resultID)); ?>">
-    SO: <input type="text" name="OS"  value="<?php echo implode(mysqli_fetch_assoc($resultOS)); ?>">
-    Factura: <input type="text" name="Factura"  value="<?php echo implode(mysqli_fetch_assoc($resultFact)); ?>">
-    Cliente: <input type="text" name="Cliente"  value="<?php echo implode(mysqli_fetch_assoc($resultCli)); ?>">
-    PZS: <input type="text" name="PZS"  value="<?php echo implode(mysqli_fetch_assoc($resultPZS)); ?>">
-    Cajas: <input type="text" name="Caja"  value="<?php echo implode(mysqli_fetch_assoc($resultCaja)); ?>">
-    Subtotal: <input type="text" name="Subtotal"  value="<?php echo implode(mysqli_fetch_assoc($resultSub)); ?>">
-    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysqli_fetch_assoc($resultHor)); ?>">
-    Direccion: <input type="text" name="Direccion"  value="<?php echo implode(mysqli_fetch_assoc($resultDire)); ?>">
-    Destino: <input type="text" name="Destino"  value="<?php echo implode(mysqli_fetch_assoc($resultDest)); ?>">
-    Concepto: <input type="text" name="Concepto"  value="<?php echo implode(mysqli_fetch_assoc($resultConce)); ?>">
-    Capacidad: <input type="text" name="Capacidad"  value="<?php echo implode(mysqli_fetch_assoc($resultCapa)); ?>">
-    Observaciones: <input type="text" name="Observaciones"  value="<?php echo implode(mysqli_fetch_assoc($resultObser)); ?>">
-    OE: <input type="text" name="OE"  value="<?php echo implode(mysqli_fetch_assoc($resultOE)); ?>">
-    Custodia: <input type="text" name="Custodia"  value="<?php echo implode(mysqli_fetch_assoc($resultCust)); ?>">
+    Fecha de carga: <input type="text" name="FechaC"  value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>"><br>
+    Fecha de entrega: <input type="text" name="FechaE"  value="<?php echo implode(mysqli_fetch_assoc($resultFE)); ?>"><br>
+    Operador: <input type="text" name="Operador" value="<?php echo implode(mysqli_fetch_assoc($resultOper)); ?>"><br>
+    Placas: <input type="text" name="Placas"  value="<?php echo implode(mysqli_fetch_assoc($resultPlac)); ?>"><br>
+    ID: <input type="text" name="ID" value="<?php echo implode(mysqli_fetch_assoc($resultID)); ?>"><br>
+    SO: <input type="text" name="OS"  value="<?php echo implode(mysqli_fetch_assoc($resultOS)); ?>"><br>
+    Factura: <input type="text" name="Factura"  value="<?php echo implode(mysqli_fetch_assoc($resultFact)); ?>"><br>
+    Cliente: <input type="text" name="Cliente"  value="<?php echo implode(mysqli_fetch_assoc($resultCli)); ?>"><br>
+    PZS: <input type="text" name="PZS"  value="<?php echo implode(mysqli_fetch_assoc($resultPZS)); ?>"><br>
+    Cajas: <input type="text" name="Caja"  value="<?php echo implode(mysqli_fetch_assoc($resultCaja)); ?>"><br>
+    Subtotal: <input type="text" name="Subtotal"  value="<?php echo implode(mysqli_fetch_assoc($resultSub)); ?>"><br>
+    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysqli_fetch_assoc($resultHor)); ?>"><br>
+    Direccion: <input type="text" name="Direccion"  value="<?php echo implode(mysqli_fetch_assoc($resultDire)); ?>"><br>
+    Destino: <input type="text" name="Destino"  value="<?php echo implode(mysqli_fetch_assoc($resultDest)); ?>"><br>
+    Concepto: <input type="text" name="Concepto"  value="<?php echo implode(mysqli_fetch_assoc($resultConce)); ?>"><br>
+    Capacidad: <input type="text" name="Capacidad"  value="<?php echo implode(mysqli_fetch_assoc($resultCapa)); ?>"><br>
+    Observaciones: <input type="text" name="Observaciones"  value="<?php echo implode(mysqli_fetch_assoc($resultObser)); ?>"><br>
+    OE: <input type="text" name="OE"  value="<?php echo implode(mysqli_fetch_assoc($resultOE)); ?>"><br>
+    Custodia: <input type="text" name="Custodia"  value="<?php echo implode(mysqli_fetch_assoc($resultCust)); ?>"><br>
     </form>
 </body>
 </html>
