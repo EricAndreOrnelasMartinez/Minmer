@@ -85,7 +85,7 @@ function hasA($string){
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
             <td><?php 
-            if(empty($show['Horario'])){
+            if(!empty($show['Horario'])){
             if(!hasA($show['Horario'])){
                 $temVar = round($show['Horario'] * 24).':00';
                 echo round($show['Horario'] * 24).':00';
