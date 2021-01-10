@@ -98,7 +98,7 @@ function hasA($string){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
-            <td><a href="editgdl.php?ids='<?php echo $show['ID_SQL']?>'&hor='<?php echo $temVar ?>'"><button type="button" class="btn btn-succes">Modificar</button></a></td>
+            <td><a href="editgdl.php?ids='<?php echo $show['ID_SQL']?>'&hor=<?php echo $temVar ?>"><button type="button" class="btn btn-succes">Modificar</button></a></td>
         </tr>
         <?php } $con->close()?>
     </table>
@@ -125,7 +125,7 @@ if(isset($_POST['FechaC'])){
     $arr = "mal";
     if(!hasA($Horario1)){
         $arr = explode(":",$Horario1);
-        $horarioT = intval($arr[0] / 24);
+        $horarioT = intval($arr[0] / 24.0);
         echo "arr0=".$arr[0]."<br>";
         echo $horarioT;
     }else {
