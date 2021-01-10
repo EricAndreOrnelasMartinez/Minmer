@@ -125,7 +125,7 @@ if(isset($_POST['FechaC'])){
     $arr = "mal";
     if(!hasA($Horario1)){
         $arr = explode(":",$Horario1);
-        $horarioT = $arr[0] / 24;
+        $horarioT = intval($arr[0] / 24);
         echo "arr0=".$arr[0]."<br>";
         echo $horarioT;
     }else {
