@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors','1');
 require 'Classes/PHPExcel/IOFactory.php';
 
-function hasA($string){
+function hasAA($string){
     $prove = false;//explode
     $arr = explode(" ",$string);
     foreach($arr as $indexL){
@@ -36,7 +36,7 @@ for($i = 2; $i <= $nRows; $i++){
     $Subtotal = $obReader->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
     $Horario = $obReader->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
     if(!empty($Horario)){
-        if(!hasA($Horario)){
+        if(!hasAA($Horario)){
             $HorarioT = $Horario * 24;
         }else {
             $HorarioT = $Horario;
@@ -88,7 +88,7 @@ function readAndGDL($fileU){
         $Subtotal1 = $obReader1->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
         $Horario1 = $obReader1->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
         if(!empty($Horario1)){
-            if(!hasA($Horario1)){
+            if(!hasAA($Horario1)){
                 $HorarioT1 = $Horario1 * 24;
             }else {
                 $HorarioT1 = $Horario1;
