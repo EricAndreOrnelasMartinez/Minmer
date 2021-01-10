@@ -87,9 +87,12 @@ function hasA($string){
             <td><?php if(!hasA($show['Horario'])){
                 $temVar = round($show['Horario'] * 24).':00';
                 echo round($show['Horario'] * 24).':00';
-            }else {
+            }else if(hasA($show['Horario'])){
                 $temVar =  $show['Horario'];
                 echo $show['Horario'];
+            }else {
+                $temVar = "Pendiente";
+                echo "Pendiente";
             } ?></td>
             <td><?php echo $show['Direccion'] ?></td>
             <td><?php echo $show['Destino'] ?></td>
