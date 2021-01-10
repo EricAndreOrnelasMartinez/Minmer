@@ -10,19 +10,6 @@ if(isset($_SESSION['user'])){
 }else {
     header("Location:index.php");
 }
-
-function hasA($string){
-    $prove = false;//explode
-    $arr = explode(" ",$string);
-    foreach($arr as $indexL){
-        if($indexL === "a" || $indexL === "A"){
-            $prove = true;
-            break;
-        }
-    }
-    return $prove;
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

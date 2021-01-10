@@ -110,7 +110,7 @@ function readAndGDL($fileU){
         }else{
             echo "algo falló";
         }
-        $con->close();
+        $con1->close();
     }
     }
 
