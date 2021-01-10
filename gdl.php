@@ -84,16 +84,22 @@ function hasA($string){
             <td><?php echo $show['PZS'] ?></td>
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
-            <td><?php if(!hasA($show['Horario'])){
+            <td><?php 
+            if(empty($show['Horario'])){
+            if(!hasA($show['Horario'])){
                 $temVar = round($show['Horario'] * 24).':00';
                 echo round($show['Horario'] * 24).':00';
             }elseif(hasA($show['Horario'])){
                 $temVar =  $show['Horario'];
                 echo $show['Horario'];
-            }elseif(empty($show['Horario'])) {
+            }
+            }else{
                 $temVar = "Pendiente";
                 echo "Pendiente";
-            } ?></td>
+            }
+            
+            
+            ?></td>
             <td><?php echo $show['Direccion'] ?></td>
             <td><?php echo $show['Destino'] ?></td>
             <td><?php echo $show['Concepto'] ?></td>
