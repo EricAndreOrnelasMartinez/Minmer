@@ -33,7 +33,7 @@ function hasA($string){
     <form action="gdl.php" method="post">
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
-    $tem_id = round($_GET['ids']) + 1;
+    $tem_id = round($_GET['ids']);
     echo $tem_id;
     $tem_hor = $_GET['hor'];
     echo $tem_hor;
