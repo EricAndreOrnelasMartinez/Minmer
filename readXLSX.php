@@ -74,6 +74,7 @@ function readAndGDL($fileU){
     $obReader1 = PHPExcel_IOFactory::load($fileName1); 
     $obReader1->setActiveSheetIndex(1);
     $nRows1 = $obReader1->setActiveSheetIndex(1)->getHighestRow();
+    $isfished1 = false;
     $HorarioT1 = "Error";
     for($i = 2; $i <= $nRows1; $i++){
         $FechaC1 = $obReader1->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
@@ -111,6 +112,11 @@ function readAndGDL($fileU){
         }else{
             echo "algo falló";
         }
+        if($i === $nRows){
+            $isfished1 = true;
+        }
+    }
+    if($isfished1){
         $con1->close();
     }
     }
