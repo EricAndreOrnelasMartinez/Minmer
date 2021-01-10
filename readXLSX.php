@@ -2,6 +2,18 @@
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 require 'Classes/PHPExcel/IOFactory.php';
+
+function hasA($string){
+    $prove = false;//explode
+    $arr = explode(" ",$string);
+    foreach($arr as $indexL){
+        if($indexL === "a" || $indexL === "A"){
+            $prove = true;
+            break;
+        }
+    }
+    return $prove;
+}
 function readAndCDMX($fileU){
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 $fileName = __DIR__."/uploads/".$fileU;
@@ -10,6 +22,7 @@ $obReader->setActiveSheetIndex(0);
 $isfished = false;
 $nRows = $obReader->setActiveSheetIndex(0)->getHighestRow();
 for($i = 2; $i <= $nRows; $i++){
+    $HorarioT = "error";
     $FechaC = $obReader->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
     $FechaE = $obReader->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
     $Operador = $obReader->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
@@ -22,6 +35,15 @@ for($i = 2; $i <= $nRows; $i++){
     $Cajas = round($obReader->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
     $Subtotal = $obReader->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
     $Horario = $obReader->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
+    if(!empty($Horario)){
+        if(!hasA($Horario)){
+            $HorarioT = $Horario * 24;
+        }else {
+            $HorarioT = $Horario;
+        }
+    }else{
+        $HorarioT = "PENDIENTE";
+    }
     $Direccion = $obReader->getActiveSheet()->getCell('M'.$i)->getCalculatedValue();
     $Destino = $obReader->getActiveSheet()->getCell('N'.$i)->getCalculatedValue();
     $Concepto = $obReader->getActiveSheet()->getCell('O'.$i)->getCalculatedValue();
@@ -29,7 +51,7 @@ for($i = 2; $i <= $nRows; $i++){
     $Observaciones = $obReader->getActiveSheet()->getCell('Q'.$i)->getCalculatedValue();
     $OE = $obReader->getActiveSheet()->getCell('R'.$i)->getCalculatedValue();
     $Custodia = $obReader->getActiveSheet()->getCell('S'.$i)->getCalculatedValue();
-    $sql = "INSERT INTO CDMX(FechaC,FechaE,Operador,Placas,ID,SO,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC','$FechaE','$Operador','$Placas','$ID','$SO','$Factura','$Cliente','$PZS','$Cajas','$Subtotal','$Horario','$Direccion','$Destino','$Concepto','$Capacidad','$Observaciones','$OE','$Custodia');";
+    $sql = "INSERT INTO CDMX(FechaC,FechaE,Operador,Placas,ID,SO,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC','$FechaE','$Operador','$Placas','$ID','$SO','$Factura','$Cliente','$PZS','$Cajas','$Subtotal','$HorarioT','$Direccion','$Destino','$Concepto','$Capacidad','$Observaciones','$OE','$Custodia');";
     $rmysql = mysqli_query($con, $sql);
     if($i == $nRows){
         $isfished = true;
@@ -51,6 +73,7 @@ function readAndGDL($fileU){
     $obReader1 = PHPExcel_IOFactory::load($fileName1); 
     $obReader1->setActiveSheetIndex(1);
     $nRows1 = $obReader1->setActiveSheetIndex(1)->getHighestRow();
+    $HorarioT1 = "Error";
     for($i = 2; $i <= $nRows1; $i++){
         $FechaC1 = $obReader1->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
         $FechaE1 = $obReader1->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
@@ -64,6 +87,15 @@ function readAndGDL($fileU){
         $Cajas1 = round($obReader1->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
         $Subtotal1 = $obReader1->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
         $Horario1 = $obReader1->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
+        if(!empty($Horario1)){
+            if(!hasA($Horario1)){
+                $HorarioT1 = $Horario1 * 24;
+            }else {
+                $HorarioT1 = $Horario1;
+            }
+        }else{
+            $HorarioT1 = "PENDIENTE";
+        }
         $Direccion1 = $obReader1->getActiveSheet()->getCell('M'.$i)->getCalculatedValue();
         $Destino1 = $obReader1->getActiveSheet()->getCell('N'.$i)->getCalculatedValue();
         $Concepto1 = $obReader1->getActiveSheet()->getCell('O'.$i)->getCalculatedValue();

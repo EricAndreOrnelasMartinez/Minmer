@@ -11,17 +11,6 @@ if(isset($_SESSION['user'])){
     header("Location:index.php");
 }
 
-function hasA($string){
-    $prove = false;//explode
-    $arr = explode(" ",$string);
-    foreach($arr as $indexL){
-        if($indexL === "a" || $indexL === "A"){
-            $prove = true;
-            break;
-        }
-    }
-    return $prove;
-}
 
 ?>
 <!DOCTYPE html>
@@ -84,22 +73,7 @@ function hasA($string){
             <td><?php echo $show['PZS'] ?></td>
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
-            <td><?php 
-            if(!empty($show['Horario'])){
-            if(!hasA($show['Horario'])){
-                $temVar = round($show['Horario'] * 24).':00';
-                echo round($show['Horario'] * 24).':00';
-            }elseif(hasA($show['Horario'])){
-                $temVar =  $show['Horario'];
-                echo $show['Horario'];
-            }
-            }else{
-                $temVar = "Pendiente";
-                echo "Pendiente";
-            }
-            
-            
-            ?></td>
+            <td><?php echo $show['Horario']?></td>
             <td><?php echo $show['Direccion'] ?></td>
             <td><?php echo $show['Destino'] ?></td>
             <td><?php echo $show['Concepto'] ?></td>

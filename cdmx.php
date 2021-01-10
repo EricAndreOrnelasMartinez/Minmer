@@ -87,11 +87,7 @@ function hasA($string){
             <td><?php echo $show['PZS'] ?></td>
             <td><?php echo $show['Caja'] ?></td>
             <td><?php echo $show['Subtotal'] ?></td>
-            <td><?php if(!hasA($show['Horario'])){
-                echo round($show['Horario'] * 24).':00';
-            }else {
-                echo $show['Horario'];
-            } ?></td>
+            <td><?php echo $show['Horario'] ?></td>
             <td><?php echo $show['Direccion'] ?></td>
             <td><?php echo $show['Destino'] ?></td>
             <td><?php echo $show['Concepto'] ?></td>
