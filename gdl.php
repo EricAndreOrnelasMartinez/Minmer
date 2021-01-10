@@ -90,7 +90,7 @@ function hasA($string){
             }elseif(hasA($show['Horario'])){
                 $temVar =  $show['Horario'];
                 echo $show['Horario'];
-            }else {
+            }elseif(empty($show['Horario'])) {
                 $temVar = "Pendiente";
                 echo "Pendiente";
             } ?></td>
