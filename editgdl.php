@@ -35,8 +35,6 @@ function hasA($string){
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = round($_GET['ids']);
     echo $tem_id;
-    $tem_hor = $_GET['hor'];
-    echo $tem_hor;
     $sqlFC = "SELECT FechaC FROM GDL WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
     $sqlFE = "SELECT FechaE FROM GDL WHERE ID_SQL=".$tem_id.";";
@@ -87,7 +85,7 @@ function hasA($string){
     PZS: <input type="text" name="PZS"  value="<?php echo implode(mysqli_fetch_assoc($resultPZS)); ?>"><br>
     Cajas: <input type="text" name="Caja"  value="<?php echo implode(mysqli_fetch_assoc($resultCaja)); ?>"><br>
     Subtotal: <input type="text" name="Subtotal"  value="<?php echo implode(mysqli_fetch_assoc($resultSub)); ?>"><br>
-    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysql_fetch_assoc($resultHor)); ?>">:00<br>
+    Horario: <input type="text" name="Horario"  value="<?php echo implode(mysqli_fetch_assoc($resultHor)); ?>">:00<br>
     Direccion: <input type="text" name="Direccion"  value="<?php echo implode(mysqli_fetch_assoc($resultDire)); ?>"><br>
     Destino: <input type="text" name="Destino"  value="<?php echo implode(mysqli_fetch_assoc($resultDest)); ?>"><br>
     Concepto: <input type="text" name="Concepto"  value="<?php echo implode(mysqli_fetch_assoc($resultConce)); ?>"><br>
