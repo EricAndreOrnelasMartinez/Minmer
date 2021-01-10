@@ -101,7 +101,7 @@ function hasA($string){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
-            <td><a href="editgdl.php?ids='<?php echo $show['ID_SQL']?>'&hor=<?php echo $temVar ?>"><button type="button" class="btn btn-succes">Modificar</button></a></td>
+            <td><a href="editgdl.php?ids=<?php echo $show['ID_SQL']?>&hor=<?php echo $temVar ?>"><button type="button" class="btn btn-succes">Modificar</button></a></td>
         </tr>
         <?php } $con->close()?>
     </table>
