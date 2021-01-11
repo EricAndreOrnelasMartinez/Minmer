@@ -11,6 +11,7 @@
         <input type="text" name="username" id="1" placeholder="Nombre de usuario">
         <input type="password" name="pass" id="2" placeholder="Contraseña">
         <input type="submit" value="Login">
+        <link rel="stylesheet" href="estilos.css">
     
     </form>
 </body>

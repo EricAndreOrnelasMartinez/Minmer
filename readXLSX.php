@@ -90,7 +90,7 @@ function readAndGDL($fileU){
         $Subtotal1 = $obReader1->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
         $Horario1 = $obReader1->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
         if(!empty($Horario1)){
-            if(!hasAA($Horario1)){
+            if(!hasAA($Horario1 )){
                 $HorarioT1 = $Horario1 * 24;
             }else {
                 $HorarioT1 = $Horario1;
