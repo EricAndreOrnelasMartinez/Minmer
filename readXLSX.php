@@ -286,8 +286,8 @@ function readAndQRO($fileU){
     $con2 = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $fileName2 = __DIR__."/uploads/".$fileU;
     $obReader2 = PHPExcel_IOFactory::load($fileName2); 
-    $obReader2->setActiveSheetIndex(4);
-    $nRows2 = $obReader2->setActiveSheetIndex(4)->getHighestRow();
+    $obReader2->setActiveSheetIndex(5);
+    $nRows2 = $obReader2->setActiveSheetIndex(5)->getHighestRow();
     $isfished2 = false;
     $HorarioT2 = "Error";
     for($i = 2; $i <= $nRows2; $i++){
