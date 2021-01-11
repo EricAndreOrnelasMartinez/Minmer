@@ -31,7 +31,7 @@ if(isset($_SESSION['user'])){
     
     </ul>
     </nav>
-    <table border="1">
+    <table>
     <thead>
         <tr>
             <td>ID SQL</td>

@@ -55,3 +55,6 @@ nav ul li a{
 	color: white;
 	text-decoration: none;
 }
+nav ul li a:hover{
+	background-color: blue;
+}
