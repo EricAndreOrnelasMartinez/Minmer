@@ -148,7 +148,7 @@ if(isset($_POST['FechaC'])){
     $OE1 = $_POST['OE'];
     $Custodia1 = $_POST['Custodia'];
     $idsql = $_POST['ID_SQL'];
-    $sqlUpdate = "UPDATE CDMX SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',OS='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=$idsql;";
+    $sqlUpdate = "UPDATE CDMX SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',SO='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=$idsql;";
     $resulupdate = mysqli_query($con2,$sqlUpdate) or die(mysqli_error($con2));
     if($resulupdate){
         echo "Perfecto eres un crack";
