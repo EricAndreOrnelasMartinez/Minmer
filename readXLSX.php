@@ -160,9 +160,9 @@ function readAndMTY($fileU){
         $OE2 = $obReader2->getActiveSheet()->getCell('R'.$i)->getCalculatedValue();
         $Custodia2 = $obReader2->getActiveSheet()->getCell('S'.$i)->getCalculatedValue();
         $sql2 = "INSERT INTO MTY(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
-        $rmysql2 = mysqli_query($con2, $sql2);
+        $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
         if($rmysql2){
-            echo "capturado!!";
+            echo "capturado!! de mty ";
         }else{
             echo "algo falló";
         }
