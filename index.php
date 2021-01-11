@@ -8,7 +8,7 @@
 <body>
     <img src="imagenes/Logo.webp" alt="Logo" width="200" >
     <form action="index.php" method="post">
-        <h3>Welcome to Minmer DB </h3>
+        <h3>Welcome</h3>
         <input type="text" name="username" id="1" placeholder="Nombre de usuario">
         <input type="password" name="pass" id="2" placeholder="Contraseña">
         <input type="submit" value="Login">
