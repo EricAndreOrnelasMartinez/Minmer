@@ -22,7 +22,7 @@ table{
 }
 
 th, td{
-	padding: 0px;
+	padding: 10px;
 }
 
 thead{
@@ -42,7 +42,7 @@ tr:hover td{
 nav{
 	background-color: rgb(2, 32, 56);
 	overflow: hidden;
-	align-content: center;
+	width: 100%;
 }
 nav ul{
 	list-style: none;
