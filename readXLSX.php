@@ -112,7 +112,7 @@ function readAndGDL($fileU){
         }else{
             echo "algo falló";
         }
-        if($i === $nRows){
+        if($i === $nRows1){
             $isfished1 = true;
         }
     }
