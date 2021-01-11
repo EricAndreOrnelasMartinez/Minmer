@@ -36,6 +36,6 @@ tr:nth-child(even){
 }
 
 tr:hover td{
-	background-color: #369681;
+	background-color:blue;
 	color: white;
 }
