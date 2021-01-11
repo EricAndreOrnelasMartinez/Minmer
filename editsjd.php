@@ -31,48 +31,48 @@ function hasA($string){
     <title>Document</title>
 </head>
 <body>
-    <form action="cun.php" method="post">
+    <form action="sjd.php" method="post">
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     $tem_id = round($_GET['ids']);
     echo $tem_id;
-    $sqlFC = "SELECT FechaC FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlFC = "SELECT FechaC FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultFC = mysqli_query($con,$sqlFC);
-    $sqlFE = "SELECT FechaE FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlFE = "SELECT FechaE FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultFE = mysqli_query($con,$sqlFE);
-    $sqlOper = "SELECT Operador FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlOper = "SELECT Operador FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultOper = mysqli_query($con,$sqlOper);
-    $sqlPlac = "SELECT Placas FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlPlac = "SELECT Placas FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultPlac = mysqli_query($con,$sqlPlac);
-    $sqlID = "SELECT ID FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlID = "SELECT ID FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultID = mysqli_query($con,$sqlID);
-    $sqlOS = "SELECT OS FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlOS = "SELECT OS FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultOS = mysqli_query($con,$sqlOS);
-    $sqlFact = "SELECT Factura FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlFact = "SELECT Factura FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultFact = mysqli_query($con,$sqlFact);
-    $sqlCli = "SELECT Cliente FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlCli = "SELECT Cliente FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultCli = mysqli_query($con,$sqlCli);
-    $sqlPZS = "SELECT PZS FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlPZS = "SELECT PZS FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultPZS = mysqli_query($con,$sqlPZS);
-    $sqlCaja = "SELECT Caja FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlCaja = "SELECT Caja FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultCaja = mysqli_query($con,$sqlCaja);
-    $sqlSub =  "SELECT Subtotal FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlSub =  "SELECT Subtotal FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultSub = mysqli_query($con,$sqlSub);
-    $sqlHor = "SELECT Horario FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlHor = "SELECT Horario FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultHor = mysqli_query($con,$sqlHor);
-    $sqlDire = "SELECT Direccion FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlDire = "SELECT Direccion FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultDire = mysqli_query($con,$sqlDire);
-    $sqlDest =  "SELECT Destino FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlDest =  "SELECT Destino FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultDest = mysqli_query($con,$sqlDest);
-    $sqlConce = "SELECT Concepto FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlConce = "SELECT Concepto FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultConce = mysqli_query($con,$sqlConce);
-    $sqlCapa = "SELECT Capacidad FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlCapa = "SELECT Capacidad FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultCapa = mysqli_query($con,$sqlCapa);
-    $sqlObser = "SELECT Observaciones FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlObser = "SELECT Observaciones FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultObser =  mysqli_query($con,$sqlObser);
-    $sqlOE = "SELECT OE FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlOE = "SELECT OE FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultOE = mysqli_query($con,$sqlOE);
-    $sqlCust = "SELECT Custodia FROM CUN WHERE ID_SQL=".$tem_id.";";
+    $sqlCust = "SELECT Custodia FROM SJD WHERE ID_SQL=".$tem_id.";";
     $resultCust = mysqli_query($con,$sqlCust);
     ?>
     Fecha de carga: <input type="text" name="FechaC"  value="<?php echo implode(mysqli_fetch_assoc($resultFC)); ?>"><br>
