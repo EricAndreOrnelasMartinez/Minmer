@@ -5,9 +5,12 @@
 	text-align: center;
 }
 
+body{
+	background-color: #48e;
+}
 form {
 	padding: 50px 20px;
-	background-color: #ededed;
+	background-color: blue;
 	margin: calc(25% + 100px);
 	margin-top: 70px;
 	padding-top: 28px;
@@ -51,4 +54,7 @@ input[type='submit']{
 	padding: 12px;
 	background-color: #a22;
 	color: #fff
+}
+image{
+	align-content: center;
 }

@@ -82,6 +82,7 @@ if(isset($_SESSION['user'])){
             <td><?php echo $show['Observaciones'] ?></td>
             <td><?php echo $show['OE'] ?></td>
             <td><?php echo $show['Custodia'] ?></td>
+            <td><a href="editcdmx.php?ids=<?php echo $show['ID_SQL']?>"><button type="button" class="btn btn-succes">Modificar</button></a></td>
         </tr> 
         <?php } $con->close()?>
     </table>
@@ -121,4 +122,44 @@ if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name'
     echo "working yet";
     readAndCDMX($_FILES['myfile']['name']);
 }
+?>
+<?php 
+
+if(isset($_POST['FechaC'])){
+    $horarioT = 'falló';
+    $con2 = mysqli_connect("localhost","root","Lasric.2018","Minmer");
+    $FechaC1 = $_POST['FechaC'];
+    $FechaE1 = $_POST['FechaE'];
+    $Operador1 = $_POST['Operador'];
+    $Placas1 = $_POST['Placas'];
+    $ID1 = $_POST['ID'];
+    $SO1 = $_POST['OS'];
+    $Factura1 = $_POST['Factura'];
+    $Cliente1 = $_POST['Cliente'];
+    $PZS1 = $_POST['PZS'];
+    $Cajas1 = $_POST['Caja'];
+    $Subtotal1 = $_POST['Subtotal'];
+    $Horario1 = $_POST['Horario'];
+    $Direccion1 = $_POST['Direccion'];
+    $Destino1 = $_POST['Destino'];
+    $Concepto1 = $_POST['Concepto'];
+    $Capacidad1 = $_POST['Capacidad'];
+    $Observaciones1 = $_POST['Observaciones'];
+    $OE1 = $_POST['OE'];
+    $Custodia1 = $_POST['Custodia'];
+    $idsql = $_POST['ID_SQL'];
+    $sqlUpdate = "UPDATE CDMX SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',OS='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=$idsql;";
+    $resulupdate = mysqli_query($con2,$sqlUpdate) or die(mysqli_error($con2));
+    if($resulupdate){
+        echo "Perfecto eres un crack";
+    }else {
+        echo "ota vez te equivocaste por pendejo";
+    }
+    $con2->close();
+    header("Location:mty.php");
+}
+
+
+
+
 ?>

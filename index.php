@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <img src="imagenes/Logo.webp" alt="Logo" width="100" >
     <form action="index.php" method="post">
         <h3>Welcome to Minmer DB </h3>
         <input type="text" name="username" id="1" placeholder="Nombre de usuario">
