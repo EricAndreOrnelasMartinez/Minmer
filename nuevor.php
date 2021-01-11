@@ -135,7 +135,7 @@ if(isset($_POST['FechaC'])){
     }else{
         $sqlUpdate = "INSERT INTO $ciudad(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC','$FechaE','$Operador','$Placas','$ID','$SO','$Factura','$Cliente','$PZS','$Cajas','$Subtotal','$Horario','$Direccion','$Destino','$Concepto','$Capacidad','$Observaciones','$OE','$Custodia');";
     }
-    $resulupdate = mysqli_query($con2,$sqlUpdate) or die(mysqli_error($con));
+    $resulupdate = mysqli_query($con,$sqlUpdate) or die(mysqli_error($con));
     if($resulupdate){
        // echo "Perfecto eres un crack";
     }else {
