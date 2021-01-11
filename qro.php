@@ -31,7 +31,7 @@ if(isset($_SESSION['user'])){
         <li><a href="sjd.php">SJD</a></li>
         <li><a href="qro.php">QRO</a></li>
         <li><a href="buscar.php">Buscar</a></li>
-    
+        <li><a href="logout.php">Log out</a></li>
     </ul>
     </nav>
     <table>
