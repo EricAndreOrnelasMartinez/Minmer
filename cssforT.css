@@ -56,5 +56,6 @@ nav ul li a:hover{
 }
 button{
 	border: none;
-	background-color:rgb(2, 32, 56) ;
+	background-color:#48e ;
+	color: white;
 }
