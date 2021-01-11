@@ -277,6 +277,59 @@ function readAndSJD($fileU){
             $isfished2 = true;
         }
         if($isfished2){
+            readAndQRO($fileU);
+            $con2->close();
+        }
+    }
+}
+function readAndQRO($fileU){
+    $con2 = mysqli_connect("localhost","root","Lasric.2018","Minmer");
+    $fileName2 = __DIR__."/uploads/".$fileU;
+    $obReader2 = PHPExcel_IOFactory::load($fileName2); 
+    $obReader2->setActiveSheetIndex(4);
+    $nRows2 = $obReader2->setActiveSheetIndex(4)->getHighestRow();
+    $isfished2 = false;
+    $HorarioT2 = "Error";
+    for($i = 2; $i <= $nRows2; $i++){
+        $FechaC2 = $obReader2->getActiveSheet()->getCell('A'.$i)->getCalculatedValue();
+        $FechaE2 = $obReader2->getActiveSheet()->getCell('B'.$i)->getCalculatedValue();
+        $Operador2 = $obReader2->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
+        $Placas2 = $obReader2->getActiveSheet()->getCell('D'.$i)->getCalculatedValue();
+        $ID2 = $obReader2->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
+        $SO2 = $obReader2->getActiveSheet()->getCell('F'.$i)->getCalculatedValue();
+        $Factura2 = $obReader2->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
+        $Cliente2 = $obReader2->getActiveSheet()->getCell('H'.$i)->getCalculatedValue();
+        $PZS2 = $obReader2->getActiveSheet()->getCell('I'.$i)->getCalculatedValue();
+        $Cajas2 = round($obReader2->getActiveSheet()->getCell('J'.$i)->getCalculatedValue());
+        $Subtotal2 = $obReader2->getActiveSheet()->getCell('K'.$i)->getCalculatedValue();
+        $Horario2 = $obReader2->getActiveSheet()->getCell('L'.$i)->getCalculatedValue();
+        if(!empty($Horario2)){
+            if(!hasAA($Horario2)){
+                $HorarioT2 = $Horario2 * 24;
+            }else {
+                $HorarioT2 = $Horario2;
+            }
+            }else{
+            $HorarioT2 = "PENDIENTE";
+            }
+        $Direccion2 = $obReader2->getActiveSheet()->getCell('M'.$i)->getCalculatedValue();
+        $Destino2 = $obReader2->getActiveSheet()->getCell('N'.$i)->getCalculatedValue();
+        $Concepto2 = $obReader2->getActiveSheet()->getCell('O'.$i)->getCalculatedValue();
+        $Capacidad2 = $obReader2->getActiveSheet()->getCell('P'.$i)->getCalculatedValue();
+        $Observaciones2 = $obReader2->getActiveSheet()->getCell('Q'.$i)->getCalculatedValue();
+        $OE2 = $obReader2->getActiveSheet()->getCell('R'.$i)->getCalculatedValue();
+        $Custodia2 = $obReader2->getActiveSheet()->getCell('S'.$i)->getCalculatedValue();
+        $sql2 = "INSERT INTO QRO(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
+        $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
+        if($rmysql2){
+           echo "capturado!! de sjd ";
+        }else{
+            echo "algo falló";
+        }
+        if($i === $nRows2){
+            $isfished2 = true;
+        }
+        if($isfished2){
             $con2->close();
         }
     }
