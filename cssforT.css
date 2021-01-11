@@ -54,3 +54,7 @@ nav ul li a{
 nav ul li a:hover{
 	background-color: blue;
 }
+button{
+	border: none;
+	background-color:rgb(2, 32, 56) ;
+}
