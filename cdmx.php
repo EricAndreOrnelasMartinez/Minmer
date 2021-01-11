@@ -89,6 +89,7 @@ if(isset($_SESSION['user'])){
 
     <form enctype="multipart/form-data" method="post">
         Subir registro exel: <input type="file" name="myfile">
+        <link rel="stylesheet" href="cssforT.css">
         <input type="submit" value="Subir">
     </form>
 </body>

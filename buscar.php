@@ -17,6 +17,16 @@ if(isset($_SESSION['user'])){
     <title>Document</title>
 </head>
 <body>
-    <h2>hola</h2>
+<ol>
+        <li><a href="cdmx.php">CDMX</a></li>
+        <li><a href="gdl.php">GDL</a></li>
+        <li><a href="mty.php">MTY</a></li>
+        <li><a href="cun.php">CUN</a></li>
+        <li><a href="sjd.php">SJD</a></li>
+        <li><a href="qro.php">QRO</a></li>
+        <li><a href="buscar.php">Buscar</a></li>
+    
+</ol>
+
 </body>
 </html>
