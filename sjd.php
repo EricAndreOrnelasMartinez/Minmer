@@ -21,7 +21,8 @@ if(isset($_SESSION['user'])){
     <title>Document</title>
 </head>
 <body>
-    <ol>
+    <nav>
+    <ul>
         <li><a href="cdmx.php">CDMX</a></li>
         <li><a href="gdl.php">GDL</a></li>
         <li><a href="mty.php">MTY</a></li>
@@ -30,8 +31,10 @@ if(isset($_SESSION['user'])){
         <li><a href="qro.php">QRO</a></li>
         <li><a href="buscar.php">Buscar</a></li>
     
-    </ol>
-    <table border="1">
+    </ul>
+    </nav>
+    <table>
+        <thead>
         <tr>
             <td>ID SQL</td>
             <td>Fecha de carga</td>
@@ -53,7 +56,9 @@ if(isset($_SESSION['user'])){
             <td>Observaciones</td>
             <td>OE</td>
             <td>Custodia</td>
+            <td><a href="nuevor.php"><button type="button" class="btn btn-succes">Nuevo</button></a></td>
         </tr>
+        </thead>
         <?php   
         $petition = 'SELECT * FROM SJD';
         $ack = mysqli_query($con, $petition);

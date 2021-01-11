@@ -108,9 +108,9 @@ function readAndGDL($fileU){
         $sql1 = "INSERT INTO GDL(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC1','$FechaE1','$Operador1','$Placas1','$ID1','$SO1','$Factura1','$Cliente1','$PZS1','$Cajas1','$Subtotal1','$HorarioT1','$Direccion1','$Destino1','$Concepto1','$Capacidad1','$Observaciones1','$OE1','$Custodia1');";
         $rmysql1 = mysqli_query($con1, $sql1);
         if($rmysql1){
-            echo "capturado!!";
+           // echo "capturado!!";
         }else{
-            echo "algo falló";
+           // echo "algo falló";
         }
         if($i == $nRows1){
             $isfished1 = true;
@@ -162,9 +162,9 @@ function readAndMTY($fileU){
         $sql2 = "INSERT INTO MTY(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
         $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
         if($rmysql2){
-            echo "capturado!! de mty ";
+           // echo "capturado!! de mty ";
         }else{
-            echo "algo falló";
+           // echo "algo falló";
         }
         if($i === $nRows2){
             $isfished2 = true;
@@ -216,9 +216,9 @@ function readAndCUN($fileU){
         $sql2 = "INSERT INTO CUN(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
         $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
         if($rmysql2){
-           echo "capturado!! de cun ";
+          // echo "capturado!! de cun ";
         }else{
-            echo "algo falló";
+           // echo "algo falló";
         }
         if($i === $nRows2){
             $isfished2 = true;
@@ -269,9 +269,9 @@ function readAndSJD($fileU){
         $sql2 = "INSERT INTO SJD(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
         $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
         if($rmysql2){
-           echo "capturado!! de sjd ";
+           //echo "capturado!! de sjd ";
         }else{
-            echo "algo falló";
+            //echo "algo falló";
         }
         if($i === $nRows2){
             $isfished2 = true;
@@ -322,9 +322,9 @@ function readAndQRO($fileU){
         $sql2 = "INSERT INTO QRO(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC2','$FechaE2','$Operador2','$Placas2','$ID2','$SO2','$Factura2','$Cliente2','$PZS2','$Cajas2','$Subtotal2','$HorarioT2','$Direccion2','$Destino2','$Concepto2','$Capacidad2','$Observaciones2','$OE2','$Custodia2');";
         $rmysql2 = mysqli_query($con2, $sql2) or die(mysqli_error($con2));
         if($rmysql2){
-           echo "capturado!! de sjd ";
+           //echo "capturado!! de sjd ";
         }else{
-            echo "algo falló";
+            //echo "algo falló";
         }
         if($i === $nRows2){
             $isfished2 = true;

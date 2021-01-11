@@ -18,10 +18,12 @@ if(isset($_SESSION['user'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssforTs.css">
     <title>Document</title>
 </head>
 <body>
-    <ol>
+    <nav>
+    <ul>
         <li><a href="cdmx.php">CDMX</a></li>
         <li><a href="gdl.php">GDL</a></li>
         <li><a href="mty.php">MTY</a></li>
@@ -30,8 +32,10 @@ if(isset($_SESSION['user'])){
         <li><a href="qro.php">QRO</a></li>
         <li><a href="buscar.php">Buscar</a></li>
     
-    </ol>
-    <table border="1">
+    </ul>
+    </nav>
+    <table>
+        <thead>
         <tr>
             <td>ID SQL</td>
             <td>Fecha de carga</td>
@@ -53,7 +57,9 @@ if(isset($_SESSION['user'])){
             <td>Observaciones</td>
             <td>OE</td>
             <td>Custodia</td>
+            <td><a href="nuevor.php"><button type="button" class="btn btn-succes">Nuevo</button></a></td>
         </tr>
+        </thead>
         <?php   
         $petition = 'SELECT * FROM CUN';
         $ack = mysqli_query($con, $petition);
@@ -116,9 +122,9 @@ if(isset($_POST['FechaC'])){
     $sqlUpdate = "UPDATE CUN SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',OS='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=$idsql;";
     $resulupdate = mysqli_query($con2,$sqlUpdate) or die(mysqli_error($con2));
     if($resulupdate){
-        echo "Perfecto eres un crack";
+        //echo "Perfecto eres un crack";
     }else {
-        echo "ota vez te equivocaste por pendejo";
+        //echo "ota vez te equivocaste por pendejo";
     }
     $con2->close();
     header("Location:cun.php");

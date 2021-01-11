@@ -16,6 +16,7 @@ if(isset($_SESSION['user'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssforT.css">
     <title>Document</title>
 </head>
 <body>
@@ -54,6 +55,7 @@ if(isset($_SESSION['user'])){
             <td>Observaciones</td>
             <td>OE</td>
             <td>Custodia</td>
+            <td><a href="nuevor.php"><button type="button" class="btn btn-succes">Nuevo</button></a></td>
         </tr>
         </thead>
         <?php   
@@ -86,44 +88,8 @@ if(isset($_SESSION['user'])){
         </tr> 
         <?php } $con->close()?>
     </table>
-
-    <form enctype="multipart/form-data" method="post">
-        Subir registro exel: <input type="file" name="myfile">
-        <link rel="stylesheet" href="cssforT.css">
-        <input type="submit" value="Subir">
-    </form>
 </body>
 </html>
-<?php 
-error_reporting(E_ALL);
-ini_set('display_errors','1');
-if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name']) && !empty($_FILES['myfile']['tmp_name'])){
-    if(!is_uploaded_file($_FILES['myfile']['tmp_name'])){
-        echo "Error: el fichero no fue procesado correctamente";
-    }
-
-    $source = $_FILES['myfile']['tmp_name'];
-    $destination = __DIR__.'/uploads/'.$_FILES['myfile']['name'];
-
-    if( is_file($destination)){
-        echo "Error: fichero existente";
-        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
-        exit;
-    }
-    if( ! @move_uploaded_file($source, $destination)){
-        echo "Error: el fichero no se pudo mover a la carpeta destino ".$destination;
-        @unlink(ini_get('upload_tmp_dir').$_FILES['myfile']['tmp_name']);
-        exit;
-    }
-   
-
-    echo "Se completo correctamente!! ||";
-    echo $_FILES['myfile']['name'];
-    include('readXLSX.php');
-    echo "working yet";
-    readAndCDMX($_FILES['myfile']['name']);
-}
-?>
 <?php 
 
 if(isset($_POST['FechaC'])){
@@ -152,9 +118,9 @@ if(isset($_POST['FechaC'])){
     $sqlUpdate = "UPDATE CDMX SET FechaC='$FechaC1',FechaE='$FechaE1',Operador='$Operador1',Placas='$Placas1',ID='$ID1',SO='$SO1',Factura='$Factura1',Cliente='$Cliente1',PZS='$PZS1',Caja='$Cajas1',Subtotal='$Subtotal1',Horario='$Horario1',Direccion='$Direccion1',Destino='$Destino1',Concepto='$Concepto1',Capacidad='$Capacidad1',Observaciones='$Observaciones1',OE='$OE1',Custodia='$Custodia1' WHERE ID_SQL=$idsql;";
     $resulupdate = mysqli_query($con2,$sqlUpdate) or die(mysqli_error($con2));
     if($resulupdate){
-        echo "Perfecto eres un crack";
+       // echo "Perfecto eres un crack";
     }else {
-        echo "ota vez te equivocaste por pendejo";
+        //echo "ota vez te equivocaste por pendejo";
     }
     $con2->close();
     header("Location:mty.php");
