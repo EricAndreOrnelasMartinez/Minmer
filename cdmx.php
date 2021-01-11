@@ -29,11 +29,8 @@ if(isset($_SESSION['user'])){
         <li><a href="buscar.php">Buscar</a></li>
     
     </ol>
-    <div>
-    
-
-    </div>
     <table border="1">
+    <thead>
         <tr>
             <td>ID SQL</td>
             <td>Fecha de carga</td>
@@ -56,6 +53,7 @@ if(isset($_SESSION['user'])){
             <td>OE</td>
             <td>Custodia</td>
         </tr>
+        </thead>
         <?php   
         $petition = 'SELECT * FROM CDMX';
         $ack = mysqli_query($con, $petition);
