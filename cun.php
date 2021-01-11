@@ -19,7 +19,7 @@ if(isset($_SESSION['user'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cssforTs.css">
-    <title>Document</title>
+    <title>CUN</title>
 </head>
 <body>
     <nav>
