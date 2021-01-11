@@ -39,3 +39,19 @@ tr:hover td{
 	background-color:blue;
 	color: white;
 }
+nav{
+	background-color: rgb(2, 32, 56);
+	overflow: hidden;
+}
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	float: left;
+}
+nav ul li a{
+	padding: 10px 20px;
+	display: block;
+	color: white;
+	text-decoration: none;
+}

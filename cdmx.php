@@ -19,7 +19,8 @@ if(isset($_SESSION['user'])){
     <title>Document</title>
 </head>
 <body>
-    <ol>
+    <nav>
+    <ul>
         <li><a href="cdmx.php">CDMX</a></li>
         <li><a href="gdl.php">GDL</a></li>
         <li><a href="mty.php">MTY</a></li>
@@ -28,7 +29,8 @@ if(isset($_SESSION['user'])){
         <li><a href="qro.php">QRO</a></li>
         <li><a href="buscar.php">Buscar</a></li>
     
-    </ol>
+    </ul>
+    </nav>
     <table border="1">
     <thead>
         <tr>
