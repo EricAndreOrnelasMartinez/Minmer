@@ -159,7 +159,7 @@ function readAndMTY($fileU){
         $Observaciones1 = $obReader1->getActiveSheet()->getCell('Q'.$i)->getCalculatedValue();
         $OE1 = $obReader1->getActiveSheet()->getCell('R'.$i)->getCalculatedValue();
         $Custodia1 = $obReader1->getActiveSheet()->getCell('S'.$i)->getCalculatedValue();
-        $sql1 = "INSERT INTO GDL(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC1','$FechaE1','$Operador1','$Placas1','$ID1','$SO1','$Factura1','$Cliente1','$PZS1','$Cajas1','$Subtotal1','$HorarioT1','$Direccion1','$Destino1','$Concepto1','$Capacidad1','$Observaciones1','$OE1','$Custodia1');";
+        $sql1 = "INSERT INTO MTY(FechaC,FechaE,Operador,Placas,ID,OS,Factura,Cliente,PZS,Caja,Subtotal,Horario,Direccion,Destino,Concepto,Capacidad,Observaciones,OE,Custodia) VALUES('$FechaC1','$FechaE1','$Operador1','$Placas1','$ID1','$SO1','$Factura1','$Cliente1','$PZS1','$Cajas1','$Subtotal1','$HorarioT1','$Direccion1','$Destino1','$Concepto1','$Capacidad1','$Observaciones1','$OE1','$Custodia1');";
         $rmysql1 = mysqli_query($con1, $sql1);
         if($rmysql1){
             echo "capturado!!";
