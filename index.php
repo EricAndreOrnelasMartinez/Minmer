@@ -17,8 +17,6 @@
 </body>
 </html>
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors','1');
 $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
 $userN = $_POST['username'];
 $pass = $_POST['pass'];
