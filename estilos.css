@@ -41,8 +41,7 @@ input[type='submit']{
 }
 
 button{
-	background-color: blue;
-	border-color: black solid 1px;
+	background-color: purple;
 	border-radius: 15px;
 	color: #fff;
 }
@@ -65,4 +64,7 @@ image{
 }
 h3{
 	color: white;
+}
+button:hover{
+	background-color: black;
 }
