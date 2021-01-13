@@ -35,14 +35,14 @@ function hasA($string){
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
     ?>
-    <select name="DB">
+    Ciudad: <select name="DB">
         <option value="CDMX">CDMX</option>
         <option value="GDL">GDL</option>
         <option value="MTY">MTY</option>
         <option value="CUN">CUN</option>
         <option value="SJD">SJD</option>
         <option value="QRO">QRO</option>
-    </select>
+    </select> <br>
     Fecha de carga: <input type="text" name="FechaC" ><br>
     Fecha de entrega: <input type="text" name="FechaE"><br>
     Operador: <input type="text" name="Operador"><br>
