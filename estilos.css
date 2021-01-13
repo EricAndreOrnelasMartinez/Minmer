@@ -24,7 +24,7 @@ h1 {
 }
 
 input {
-	width: calc(100% - 20px);
+	width: calc(100% - 50px);
 	padding: 9px;
 	margin: auto;
 	margin-top: 12px;
