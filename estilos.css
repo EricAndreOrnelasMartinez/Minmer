@@ -40,7 +40,11 @@ input[type='submit']{
 	border: none;
 }
 
-
+button{
+	background-color: #48e;
+	border-radius: 15px;
+	color: #fff;
+}
 .ok {
 	text-align: center;
 	width: 100%;

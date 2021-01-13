@@ -31,6 +31,7 @@ function hasA($string){
     <title>Nuevo</title>
 </head>
 <body>
+    <a href="cdmx.php"><button type="button">Regresar</button></a>
     <form action="nuevor.php" method="post">
     <?php
     $con = mysqli_connect("localhost","root","Lasric.2018","Minmer");
@@ -101,6 +102,7 @@ if(isset($_FILES) && isset($_FILES['myfile']) && !empty($_FILES['myfile']['name'
     include('readXLSX.php');
     //echo "working yet";
     readAndCDMX($_FILES['myfile']['name']);
+    header("Location:cdmx.php");
 }
 ?>
 <?php 
